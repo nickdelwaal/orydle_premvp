@@ -6,11 +6,10 @@ export function Footer() {
       <div className="footer-cta-shell">
         <div className="footer-cta-main">
           <div className="footer-cta-copy">
-            <p className="footer-cta-label">ORYDLE AI / SYSTEM INTELLIGENCE</p>
-            <h2 className="footer-cta-heading">Ready to build dependable systems</h2>
+            <p className="footer-cta-label">ORYDLE / SYSTEM INTELLIGENCE</p>
+            <h2 className="footer-cta-heading">Architecture that enforces itself</h2>
             <p className="footer-cta-supporting">
-              Map architecture, plan impact, review risk, and ship with confidence across shared service
-              boundaries.
+              Stop documenting systems. Start defining them. Design visually with Krum, generate structure, ship changes that preserve alignment across intent, architecture, and code.
             </p>
 
             <div className="footer-cta-buttons">
@@ -18,7 +17,7 @@ export function Footer() {
                 Request Access
               </Link>
               <Link href="/approach" className="btn-pill-ghost footer-light min-h-11 px-7 py-3 text-[15px]">
-                Explore Workflow
+                Read the Approach
               </Link>
             </div>
           </div>
@@ -27,7 +26,7 @@ export function Footer() {
             <div className="footer-cta-orb-content">
               <p className="footer-cta-orb-value">43</p>
               <p className="footer-cta-orb-label">Services Mapped</p>
-              <p className="footer-cta-orb-sublabel">Per Dependency Snapshot</p>
+              <p className="footer-cta-orb-sublabel">Per System Instance</p>
             </div>
           </div>
 

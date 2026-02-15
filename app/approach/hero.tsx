@@ -7,11 +7,10 @@ export function ApproachHero() {
         <div>
           <p className="ui-label mb-4">Our Approach</p>
           <h1 className="editorial-h1 mb-6 text-platinum">
-            System-first AI for <em>production engineering</em>.
+            How Krum maintains <em>alignment</em>
           </h1>
           <p className="max-w-2xl text-[18px] text-platinum/65">
-            We prioritize architecture understanding, explicit planning, and collaborative review before execution.
-            This sequence is what makes generated changes trustworthy.
+            Three layers that stay synchronized by design, not by discipline.
           </p>
         </div>
 
@@ -27,7 +26,7 @@ export function ApproachHero() {
             <div className="absolute inset-0 bg-gradient-to-tr from-black/55 via-transparent to-[#255bfc]/25" />
           </div>
           <div className="border-t border-white/10 px-5 py-4 text-[14px] text-platinum/72">
-            Plan-first workflow: map, evaluate impact, then change.
+            Intent → Structure → Execution. Always aligned.
           </div>
         </div>
       </div>

@@ -13,35 +13,35 @@ type TabItem = {
 };
 
 const tabItems: TabItem[] = [
-  { id: "mismatch", label: "Why tools break", rotation: -2 },
-  { id: "workflow", label: "Krum workflow", rotation: -1.4 },
-  { id: "team-fit", label: "Team fit", rotation: -1 },
+  { id: "mismatch", label: "The Problem", rotation: -2 },
+  { id: "workflow", label: "How Krum Works", rotation: -1.4 },
+  { id: "team-fit", label: "Who It's For", rotation: -1 },
 ];
 
 const mismatchPoints = [
-  "Most AI tools reason in isolated files, not across boundaries.",
-  "Production changes need service context, dependency awareness, and review gates.",
-  "Speed without architecture awareness increases rollback and incident risk.",
+  "Code diverges from architecture",
+  "Architecture diverges from intent",
+  "Teams rebuild mental models from scratch",
 ];
 
 const workflowSteps = [
-  { id: "01", label: "Map", detail: "Index services, shared libraries, and critical ownership boundaries." },
-  { id: "02", label: "Plan", detail: "Propose structured changes and expected blast radius before coding." },
-  { id: "03", label: "Review", detail: "Collaborate with engineers before execution to remove blind spots." },
-  { id: "04", label: "Change", detail: "Apply changes with context-aware implementation and confidence checks." },
+  { id: "01", label: "Intent Layer", detail: "Define what the system should do, in plain language with constraints" },
+  { id: "02", label: "Structure Layer", detail: "Design components visually—services, flows, agents, resources—as formal objects" },
+  { id: "03", label: "Execution Layer", detail: "Generate production-ready code that implements your structure and respects your intent" },
 ];
 
 const teamFitPoints = [
-  "Growing codebases that outgrew file-level assistants",
-  "Platform and microservice teams with shared ownership",
-  "Organizations with strict reliability and change-management expectations",
+  "Systems span multiple services",
+  "New engineers can't grok the codebase in a day",
+  "AI coding tools generate correct syntax but wrong architecture",
+  "'Just read the code' stopped being a viable answer",
 ];
 
 function PanelMismatchedTools() {
   return (
     <div className="space-y-6">
       <p className="max-w-3xl text-[18px] text-platinum/70">
-        The gap is not typing speed. The gap is architecture understanding and coordinated change.
+        Traditional development breaks alignment:
       </p>
       <ul className="space-y-4">
         {mismatchPoints.map((point) => (
@@ -51,24 +51,35 @@ function PanelMismatchedTools() {
           </li>
         ))}
       </ul>
+      <p className="max-w-3xl text-[16px] text-platinum/60">
+        Every PR is a gamble. Every new engineer needs weeks to contribute confidently.
+      </p>
     </div>
   );
 }
 
 function PanelWorkflow() {
   return (
-    <div className="grid gap-4 md:grid-cols-2">
-      {workflowSteps.map((step) => (
-        <article key={step.id} className="surface-card p-5">
-          <div className="mb-3 flex items-center justify-between">
-            <h3 className="editorial-h3 text-[1.5rem] text-platinum">
-              <em>{step.label}</em>
-            </h3>
-            <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-platinum/60">{step.id}</span>
-          </div>
-          <p className="text-[16px] text-platinum/70">{step.detail}</p>
-        </article>
-      ))}
+    <div className="space-y-6">
+      <p className="max-w-3xl text-[18px] text-platinum/70">
+        We enforce three-layer consistency:
+      </p>
+      <div className="grid gap-4 md:grid-cols-3">
+        {workflowSteps.map((step) => (
+          <article key={step.id} className="surface-card p-5">
+            <div className="mb-3 flex items-center justify-between">
+              <h3 className="editorial-h3 text-[1.5rem] text-platinum">
+                <em>{step.label}</em>
+              </h3>
+              <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-platinum/60">{step.id}</span>
+            </div>
+            <p className="text-[16px] text-platinum/70">{step.detail}</p>
+          </article>
+        ))}
+      </div>
+      <p className="max-w-3xl text-[16px] text-platinum/60">
+        Change one layer? The others update automatically—or the system rejects it if alignment breaks.
+      </p>
     </div>
   );
 }
@@ -77,18 +88,19 @@ function PanelTeamFit() {
   return (
     <div className="space-y-5">
       <p className="max-w-3xl text-[18px] text-platinum/70">
-        Krum is designed for teams that treat software as an evolving system, not a static collection of files.
+        Built for teams where:
       </p>
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-2">
         {teamFitPoints.map((item, index) => (
-          <article key={item} className="surface-card p-5">
-            <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-platinum/55">
-              Fit {index + 1}
-            </span>
-            <p className="mt-3 text-[16px] text-platinum/80">{item}</p>
+          <article key={item} className="surface-card flex items-start gap-3 p-5">
+            <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-electric" />
+            <p className="text-[16px] text-platinum/80">{item}</p>
           </article>
         ))}
       </div>
+      <p className="max-w-3xl text-[16px] text-platinum/60">
+        Primary users: engineers, architects, technical founders scaling past the &lsquo;everyone knows everything&rsquo; phase.
+      </p>
     </div>
   );
 }
@@ -114,7 +126,7 @@ export function FolderTabs() {
         <div className="mb-8">
           <p className="ui-label mb-3">Core Narrative</p>
           <h2 className="editorial-h2 max-w-3xl text-platinum">
-            Product thinking shaped as a <em>folder-tab</em> briefing.
+            Three layers. Always <em>aligned</em>.
           </h2>
         </div>
 

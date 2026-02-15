@@ -1,59 +1,70 @@
 import { SerratedDivider } from "@/components/ui/serrated-divider";
 
-const traditional = [
-  "Generate code before understanding architecture",
-  "Narrow file-level context",
-  "Weak visibility into system impact",
-  "Reactive bug chasing after merge",
-  "Low confidence under production constraints",
+const scenarios = [
+  {
+    trigger: "When you change the Intent Layer:",
+    outcomes: [
+      "Structure updates to match",
+      "Execution scaffolding regenerates",
+    ],
+    fallback: "System flags conflicts and requires resolution",
+  },
+  {
+    trigger: "When you change the Structure Layer:",
+    outcomes: [
+      "Intent validation runs",
+      "Execution code updates",
+    ],
+    fallback: "Dependency violations surface immediately",
+  },
+  {
+    trigger: "When you change the Execution Layer:",
+    outcomes: [
+      "Structure consistency check runs",
+      "Intent alignment verified",
+    ],
+    fallback: "Change is rejected with explanation",
+  },
 ];
 
-const systemFirst = [
-  "Map services, boundaries, and dependencies first",
-  "Model impact before proposing modifications",
-  "Review change plans with humans before execution",
-  "Apply context-aware changes tied to architecture",
-  "Ship with higher confidence and lower rollback risk",
-];
-
-export function ComparisonMatrix() {
+export function EnforcementModel() {
   return (
-    <section className="px-6 pb-24 pt-14">
-      <div className="mx-auto max-w-7xl">
+    <section className="px-6 py-20">
+      <div className="mx-auto max-w-6xl">
         <div className="mb-8 text-center">
-          <p className="ui-label mb-3">Comparison</p>
+          <p className="ui-label mb-3">Enforcement</p>
           <h2 className="editorial-h2 text-platinum">
-            Prompt-first vs <em>system-first</em> execution.
+            Changes propagate or get <em>rejected</em>
           </h2>
         </div>
 
         <div className="surface-panel relative overflow-hidden p-6 md:p-8">
           <SerratedDivider className="absolute left-0 right-0 top-0" />
 
-          <div className="grid gap-6 pt-4 md:grid-cols-2">
-            <article className="surface-card p-6">
-              <h3 className="editorial-h3 mb-5 text-[1.4rem] text-platinum/85">Traditional Prompt-first</h3>
-              <ul className="space-y-3">
-                {traditional.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-[16px] text-platinum/65">
-                    <span className="mt-[7px] h-2 w-2 shrink-0 rounded-full bg-platinum/45" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
+          <div className="grid gap-6 pt-4 md:grid-cols-3">
+            {scenarios.map((scenario) => (
+              <article key={scenario.trigger} className="surface-card p-6">
+                <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.16em] text-blue-electric">
+                  {scenario.trigger}
+                </p>
+                <div className="space-y-2">
+                  {scenario.outcomes.map((outcome) => (
+                    <p key={outcome} className="flex items-start gap-2 text-[15px] text-platinum/80">
+                      <span className="shrink-0 text-platinum/50">→</span>
+                      {outcome}
+                    </p>
+                  ))}
+                  <p className="flex items-start gap-2 text-[15px] text-platinum/60">
+                    <span className="shrink-0 text-platinum/50">→</span>
+                    <span>OR: {scenario.fallback}</span>
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
 
-            <article className="surface-card border-blue-electric/40 p-6">
-              <h3 className="editorial-h3 mb-5 text-[1.4rem] text-platinum">Orydle System-first</h3>
-              <ul className="space-y-3">
-                {systemFirst.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-[16px] text-platinum/82">
-                    <span className="mt-[7px] h-2 w-2 shrink-0 rounded-full bg-blue-electric" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
+          <div className="mt-6 rounded-2xl border border-blue-electric/30 bg-blue-electric/10 p-5 text-center text-[16px] text-platinum/84">
+            This isn&apos;t CI/CD. This is architectural governance as a first-class system.
           </div>
         </div>
       </div>

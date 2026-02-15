@@ -8,11 +8,10 @@ export function KrumHero() {
         <div>
           <p className="ui-label mb-4">Product / Krum</p>
           <h1 className="editorial-h1 mb-6 text-platinum">
-            Reason about systems, then <em>change with confidence</em>.
+            A visual system builder, not a <em>diagramming tool</em>
           </h1>
           <p className="max-w-2xl text-[18px] text-platinum/66">
-            Krum helps teams map architecture, evaluate blast radius, and stage safer implementation plans
-            before generating or modifying code.
+            Krum lets you compose systems from structured blocks. Generate architecture as data. Produce code that implements what you designed—and reject changes that break alignment.
           </p>
         </div>
 
@@ -34,12 +33,12 @@ export function KrumHero() {
             className="sticky-note absolute -bottom-5 right-4 w-[250px] p-6 md:right-7"
             style={{ "--note-rotation": "4deg" } as CSSProperties}
           >
-            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#1c1917]/80">Workflow Cue</p>
+            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#1c1917]/80">Core Principle</p>
             <h3 className="mt-2 font-[var(--font-display)] text-2xl font-light leading-tight">
-              Map. Plan. Review. Change.
+              Design. Generate. Enforce.
             </h3>
             <p className="mt-4 border-t border-[#1c1917]/25 pt-3 text-[14px] text-[#1c1917]/82">
-              Production confidence starts before generation.
+              Architecture is the source of truth.
             </p>
           </aside>
         </div>

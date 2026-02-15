@@ -11,35 +11,41 @@ type ShowcaseItem = {
   offset?: boolean;
 };
 
-const showcaseItems: ShowcaseItem[] = [
+type ShowcaseItemExtended = ShowcaseItem & { description: string };
+
+const showcaseItems: ShowcaseItemExtended[] = [
   {
-    id: "architecture-map",
-    title: "Service Topology Snapshot",
+    id: "system-builder",
+    title: "System Builder Interface",
+    description: "Visual composition: services, boundaries, flows designed as structured blocks—not diagrams",
     figureId: "1A",
     image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=900&q=80",
-    alt: "Software architecture map on screen",
+    alt: "System builder interface with connected components",
   },
   {
-    id: "change-plan",
-    title: "Impact Planning Board",
+    id: "architecture-model",
+    title: "Architecture Model",
+    description: "Formal graph representation: dependencies, ownership, constraints, invariants",
     figureId: "2B",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80",
-    alt: "Team reviewing a technical change plan",
+    alt: "Architecture model visualization",
     offset: true,
   },
   {
-    id: "review-loop",
-    title: "Review Gate Session",
+    id: "generated-structure",
+    title: "Generated Structure",
+    description: "Real, editable code organized by your architecture—boilerplate, interfaces, connective logic",
     figureId: "3C",
     image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80",
-    alt: "Engineers collaborating on reviews",
+    alt: "Generated code structure view",
   },
   {
-    id: "deployment-window",
-    title: "Release Window Control",
+    id: "evolution-controls",
+    title: "Evolution Controls",
+    description: "Safe change management: impact analysis, alignment verification, execution confidence",
     figureId: "4D",
     image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&w=900&q=80",
-    alt: "Operations dashboard during release window",
+    alt: "Evolution controls dashboard",
   },
 ];
 
@@ -50,7 +56,7 @@ export function ShowcaseGrid() {
         <div className="mb-10">
           <p className="ui-label mb-3">Showcase Catalog</p>
           <h2 className="editorial-h2 max-w-3xl text-platinum">
-            Visual artifacts from a system-first <em>engineering loop</em>.
+            The system is the truth. Code <em>follows</em>.
           </h2>
         </div>
 
@@ -78,6 +84,9 @@ export function ShowcaseGrid() {
               <h3 className="mt-4 font-[var(--font-display)] text-[1.35rem] italic leading-tight text-platinum">
                 {item.title}
               </h3>
+              <p className="mt-2 text-[14px] leading-relaxed text-platinum/55">
+                {item.description}
+              </p>
             </article>
           ))}
         </div>

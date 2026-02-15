@@ -1,30 +1,36 @@
-import type { CSSProperties } from "react";
-import Link from "next/link";
+import { SerratedDivider } from "@/components/ui/serrated-divider";
+
+const successMetrics = [
+  "New engineers understand systems in hours, not weeks",
+  "Architecture accuracy is guaranteed, not aspirational",
+  "Generated code is trusted as a starting point",
+  "Teams make changes with confidence, not fear",
+];
 
 export function Stage() {
   return (
-    <section className="px-6 pb-24 pt-10">
-      <div className="mx-auto max-w-4xl">
-        <div
-          className="sticky-note p-10 md:p-12"
-          style={{ "--note-rotation": "1.5deg" } as CSSProperties}
-        >
-          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#1c1917]/75">Current Stage</p>
-          <h2 className="mt-3 font-[var(--font-display)] text-4xl font-light leading-tight md:text-5xl">
-            Early development with design-partner teams.
+    <section className="px-6 pb-24 pt-6">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-8 text-center">
+          <p className="ui-label mb-3">Vision</p>
+          <h2 className="editorial-h2 text-platinum">
+            What success <em>looks like</em>
           </h2>
-          <p className="mt-5 text-[18px] text-[#1c1917]/86">
-            We are validating workflows in real engineering environments before opening access broadly.
-          </p>
+        </div>
 
-          <div className="mt-8 border-t border-[#1c1917]/25 pt-4">
-            <Link
-              href="/request-access"
-              className="inline-flex min-h-11 items-center rounded-full bg-[#1c1917] px-7 py-3 text-[15px] font-semibold text-[#e7e5e4] transition-colors hover:bg-black"
-            >
-              Request Early Access
-            </Link>
-          </div>
+        <div className="surface-panel relative overflow-hidden p-6 md:p-8">
+          <SerratedDivider className="absolute left-0 right-0 top-0" />
+
+          <p className="mb-6 pt-5 text-[18px] text-platinum/70">We succeed when:</p>
+
+          <ul className="space-y-3">
+            {successMetrics.map((metric) => (
+              <li key={metric} className="surface-card flex items-start gap-3 p-5 text-platinum/82">
+                <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-electric" />
+                <span className="text-[16px]">{metric}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

@@ -7,11 +7,10 @@ export function AboutHero() {
         <div>
           <p className="ui-label mb-4">About Orydle</p>
           <h1 className="editorial-h1 mb-6 text-platinum">
-            Building AI with <em>engineering judgment</em> at the center.
+            We believe architecture should <em>enforce itself</em>
           </h1>
           <p className="max-w-2xl text-[18px] text-platinum/65">
-            Orydle exists to help teams understand and evolve real software systems.
-            We focus on context, constraints, and collaboration before code generation.
+            Orydle exists because growing systems lose clarity by default. We&apos;re building Krum to make structural truth inevitable, not aspirational.
           </p>
         </div>
 
@@ -27,7 +26,7 @@ export function AboutHero() {
             <div className="absolute inset-0 bg-gradient-to-tr from-black/55 via-transparent to-[#255bfc]/20" />
           </div>
           <div className="border-t border-white/10 px-5 py-4 text-[14px] text-platinum/72">
-            From system mapping to safe change planning.
+            Making structural truth inevitable.
           </div>
         </div>
       </div>

@@ -16,8 +16,8 @@ export default function KrumPage() {
     <>
       <KrumHero />
       <Philosophy />
-      <WhatItIs />
       <EngineeringPhilosophy />
+      <WhatItIs />
       <DevelopmentNotice />
     </>
   );
