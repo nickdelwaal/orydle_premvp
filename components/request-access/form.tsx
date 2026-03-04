@@ -234,7 +234,7 @@ export function RequestAccessForm() {
           <button
             type="submit"
             disabled={isSubmitting || submitStatus === "success"}
-            className="btn-pill-primary min-h-11 px-7 py-3 text-[15px] disabled:cursor-not-allowed disabled:opacity-65"
+            className="cta-button disabled:cursor-not-allowed disabled:opacity-65"
           >
             {buttonText}
           </button>

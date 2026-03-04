@@ -1,0 +1,339 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <filter id="f-core" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="18" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="f-signal" x="-300%" y="-300%" width="700%" height="700%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="f-glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="f-logo" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="f-amb" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="70"/></filter>
+    <radialGradient id="g-core-halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00BDFE" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#00BDFE" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#00BDFE" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g-core-fill" cx="40%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#091828"/>
+      <stop offset="70%" stop-color="#050f1a"/>
+      <stop offset="100%" stop-color="#020810"/>
+    </radialGradient>
+    <radialGradient id="g-sig" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="35%" stop-color="#06b6d4" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="grad-e-0" gradientUnits="userSpaceOnUse" x1="600" y1="400" x2="600" y2="170">
+      <stop offset="0%" stop-color="#00BDFE" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="grad-e-1" gradientUnits="userSpaceOnUse" x1="600" y1="400" x2="748" y2="224">
+      <stop offset="0%" stop-color="#00BDFE" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="grad-e-2" gradientUnits="userSpaceOnUse" x1="600" y1="400" x2="827" y2="360">
+      <stop offset="0%" stop-color="#00BDFE" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="grad-e-3" gradientUnits="userSpaceOnUse" x1="600" y1="400" x2="799" y2="515">
+      <stop offset="0%" stop-color="#00BDFE" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="grad-e-4" gradientUnits="userSpaceOnUse" x1="600" y1="400" x2="679" y2="616">
+      <stop offset="0%" stop-color="#00BDFE" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="grad-e-5" gradientUnits="userSpaceOnUse" x1="600" y1="400" x2="521" y2="616">
+      <stop offset="0%" stop-color="#00BDFE" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="grad-e-6" gradientUnits="userSpaceOnUse" x1="600" y1="400" x2="401" y2="515">
+      <stop offset="0%" stop-color="#00BDFE" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="grad-e-7" gradientUnits="userSpaceOnUse" x1="600" y1="400" x2="373" y2="360">
+      <stop offset="0%" stop-color="#00BDFE" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="grad-e-8" gradientUnits="userSpaceOnUse" x1="600" y1="400" x2="452" y2="224">
+      <stop offset="0%" stop-color="#00BDFE" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.7"/>
+    </linearGradient>
+    <path id="mp-0" d="M600,400 Q600,285 600,170"/>
+    <path id="mp-1" d="M600,400 Q674,312 748,224"/>
+    <path id="mp-2" d="M600,400 Q713.5,380 827,360"/>
+    <path id="mp-3" d="M600,400 Q699.5,457.5 799,515"/>
+    <path id="mp-4" d="M600,400 Q639.5,508 679,616"/>
+    <path id="mp-5" d="M600,400 Q560.5,508 521,616"/>
+    <path id="mp-6" d="M600,400 Q500.5,457.5 401,515"/>
+    <path id="mp-7" d="M600,400 Q486.5,380 373,360"/>
+    <path id="mp-8" d="M600,400 Q526,312 452,224"/>
+  </defs>
+
+  <!-- Ambient radial glow behind center -->
+  <ellipse cx="600" cy="400" rx="320" ry="220" fill="#00BDFE" opacity="0.03" filter="url(#f-amb)"/>
+  <ellipse cx="600" cy="400" rx="140" ry="100" fill="#00BDFE" opacity="0.04" filter="url(#f-amb)"/>
+
+  <!-- Connection lines -->
+  <g fill="none">
+  <line x1="600" y1="400" x2="600" y2="170" stroke="url(#grad-e-0)" stroke-width="0.8" opacity="0.35">
+    <animate attributeName="opacity" values="0.25;0.5;0.25" dur="4.0s" repeatCount="indefinite" begin="0.0s"/>
+  </line>
+  <line x1="600" y1="400" x2="748" y2="224" stroke="url(#grad-e-1)" stroke-width="0.8" opacity="0.35">
+    <animate attributeName="opacity" values="0.25;0.5;0.25" dur="4.3s" repeatCount="indefinite" begin="0.4s"/>
+  </line>
+  <line x1="600" y1="400" x2="827" y2="360" stroke="url(#grad-e-2)" stroke-width="0.8" opacity="0.35">
+    <animate attributeName="opacity" values="0.25;0.5;0.25" dur="4.6s" repeatCount="indefinite" begin="0.8s"/>
+  </line>
+  <line x1="600" y1="400" x2="799" y2="515" stroke="url(#grad-e-3)" stroke-width="0.8" opacity="0.35">
+    <animate attributeName="opacity" values="0.25;0.5;0.25" dur="4.9s" repeatCount="indefinite" begin="1.2s"/>
+  </line>
+  <line x1="600" y1="400" x2="679" y2="616" stroke="url(#grad-e-4)" stroke-width="0.8" opacity="0.35">
+    <animate attributeName="opacity" values="0.25;0.5;0.25" dur="5.2s" repeatCount="indefinite" begin="1.6s"/>
+  </line>
+  <line x1="600" y1="400" x2="521" y2="616" stroke="url(#grad-e-5)" stroke-width="0.8" opacity="0.35">
+    <animate attributeName="opacity" values="0.25;0.5;0.25" dur="5.5s" repeatCount="indefinite" begin="2.0s"/>
+  </line>
+  <line x1="600" y1="400" x2="401" y2="515" stroke="url(#grad-e-6)" stroke-width="0.8" opacity="0.35">
+    <animate attributeName="opacity" values="0.25;0.5;0.25" dur="5.8s" repeatCount="indefinite" begin="2.4s"/>
+  </line>
+  <line x1="600" y1="400" x2="373" y2="360" stroke="url(#grad-e-7)" stroke-width="0.8" opacity="0.35">
+    <animate attributeName="opacity" values="0.25;0.5;0.25" dur="6.1s" repeatCount="indefinite" begin="2.8s"/>
+  </line>
+  <line x1="600" y1="400" x2="452" y2="224" stroke="url(#grad-e-8)" stroke-width="0.8" opacity="0.35">
+    <animate attributeName="opacity" values="0.25;0.5;0.25" dur="6.4s" repeatCount="indefinite" begin="3.2s"/>
+  </line>
+  </g>
+
+  <!-- Signal packets -->
+  <circle r="2.5" fill="url(#g-sig)" filter="url(#f-signal)">
+    <animateMotion dur="3.5s" repeatCount="indefinite" begin="0.0s" calcMode="spline" keySplines="0.4 0 0.2 1"><mpath href="#mp-0"/></animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="3.5s" repeatCount="indefinite" begin="0.0s"/>
+  </circle>
+  <circle r="2.5" fill="url(#g-sig)" filter="url(#f-signal)">
+    <animateMotion dur="3.9s" repeatCount="indefinite" begin="0.6s" calcMode="spline" keySplines="0.4 0 0.2 1"><mpath href="#mp-1"/></animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="3.9s" repeatCount="indefinite" begin="0.6s"/>
+  </circle>
+  <circle r="2.5" fill="url(#g-sig)" filter="url(#f-signal)">
+    <animateMotion dur="4.3s" repeatCount="indefinite" begin="1.1s" calcMode="spline" keySplines="0.4 0 0.2 1"><mpath href="#mp-2"/></animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="4.3s" repeatCount="indefinite" begin="1.1s"/>
+  </circle>
+  <circle r="2.5" fill="url(#g-sig)" filter="url(#f-signal)">
+    <animateMotion dur="4.7s" repeatCount="indefinite" begin="1.7s" calcMode="spline" keySplines="0.4 0 0.2 1"><mpath href="#mp-3"/></animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="4.7s" repeatCount="indefinite" begin="1.7s"/>
+  </circle>
+  <circle r="2.5" fill="url(#g-sig)" filter="url(#f-signal)">
+    <animateMotion dur="5.1s" repeatCount="indefinite" begin="2.2s" calcMode="spline" keySplines="0.4 0 0.2 1"><mpath href="#mp-4"/></animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="5.1s" repeatCount="indefinite" begin="2.2s"/>
+  </circle>
+  <circle r="2.5" fill="url(#g-sig)" filter="url(#f-signal)">
+    <animateMotion dur="5.5s" repeatCount="indefinite" begin="2.8s" calcMode="spline" keySplines="0.4 0 0.2 1"><mpath href="#mp-5"/></animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="5.5s" repeatCount="indefinite" begin="2.8s"/>
+  </circle>
+  <circle r="2.5" fill="url(#g-sig)" filter="url(#f-signal)">
+    <animateMotion dur="5.9s" repeatCount="indefinite" begin="3.3s" calcMode="spline" keySplines="0.4 0 0.2 1"><mpath href="#mp-6"/></animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="5.9s" repeatCount="indefinite" begin="3.3s"/>
+  </circle>
+  <circle r="2.5" fill="url(#g-sig)" filter="url(#f-signal)">
+    <animateMotion dur="6.3s" repeatCount="indefinite" begin="3.9s" calcMode="spline" keySplines="0.4 0 0.2 1"><mpath href="#mp-7"/></animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="6.3s" repeatCount="indefinite" begin="3.9s"/>
+  </circle>
+  <circle r="2.5" fill="url(#g-sig)" filter="url(#f-signal)">
+    <animateMotion dur="6.7s" repeatCount="indefinite" begin="4.4s" calcMode="spline" keySplines="0.4 0 0.2 1"><mpath href="#mp-8"/></animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="6.7s" repeatCount="indefinite" begin="4.4s"/>
+  </circle>
+
+  <!-- OUTER NODES -->
+  <g transform="translate(600,170)">
+    <!-- outer halo -->
+    <circle r="34" fill="none" stroke="#00BDFE" stroke-width="0.4" opacity="0.10"/>
+    <!-- main ring -->
+    <circle r="28" fill="#06101e" fill-opacity="0.55"/>
+    <circle r="28" fill="none" stroke="#00BDFE" stroke-width="1.0" opacity="0.85">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3.5s" repeatCount="indefinite" begin="0.0s"/>
+    </circle>
+    <circle r="22" fill="none" stroke="#00BDFE" stroke-width="0.3" opacity="0.2"/>
+    <!-- icon -->
+    <path d="M-8,4 L-8,-4 L0,-10 L8,-4 L8,4 L0,10 Z" fill="none" stroke="#00BDFE" stroke-width="1.2" stroke-linejoin="round" opacity="0.9"/>
+<line x1="-4" y1="-2" x2="4" y2="2" stroke="#00BDFE" stroke-width="0.9" opacity="0.6"/>
+    <!-- labels -->
+    <text y="-46" text-anchor="middle" font-family="'SF Mono','Fira Code','Consolas',monospace" font-size="8.5" fill="#00BDFE" opacity="0.85" letter-spacing="2">API GATEWAY</text>
+    <text y="-57" text-anchor="middle" font-family="'SF Mono','Fira Code','Consolas',monospace" font-size="6.5" fill="#00BDFE" opacity="0.4" letter-spacing="1">REST · GRAPHQL</text>
+  </g>
+  <g transform="translate(748,224)">
+    <!-- outer halo -->
+    <circle r="34" fill="none" stroke="#00BDFE" stroke-width="0.4" opacity="0.10"/>
+    <!-- main ring -->
+    <circle r="28" fill="#06101e" fill-opacity="0.55"/>
+    <circle r="28" fill="none" stroke="#00BDFE" stroke-width="1.0" opacity="0.85">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3.8s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle r="22" fill="none" stroke="#00BDFE" stroke-width="0.3" opacity="0.2"/>
+    <!-- icon -->
+    <ellipse cx="0" cy="-6" rx="10" ry="3.5" fill="none" stroke="#00BDFE" stroke-width="1.2" opacity="0.9"/>
+<line x1="-10" y1="-6" x2="-10" y2="6" stroke="#00BDFE" stroke-width="1.2" opacity="0.9"/>
+<line x1="10" y1="-6" x2="10" y2="6" stroke="#00BDFE" stroke-width="1.2" opacity="0.9"/>
+<ellipse cx="0" cy="6" rx="10" ry="3.5" fill="none" stroke="#00BDFE" stroke-width="1.2" opacity="0.9"/>
+    <!-- labels -->
+    <text y="-46" text-anchor="middle" font-family="'SF Mono','Fira Code','Consolas',monospace" font-size="8.5" fill="#00BDFE" opacity="0.85" letter-spacing="2">DATABASE</text>
+    <text y="-57" text-anchor="middle" font-family="'SF Mono','Fira Code','Consolas',monospace" font-size="6.5" fill="#00BDFE" opacity="0.4" letter-spacing="1">PG · REDIS</text>
+  </g>
+  <g transform="translate(827,360)">
+    <!-- outer halo -->
+    <circle r="34" fill="none" stroke="#00BDFE" stroke-width="0.4" opacity="0.10"/>
+    <!-- main ring -->
+    <circle r="28" fill="#06101e" fill-opacity="0.55"/>
+    <circle r="28" fill="none" stroke="#00BDFE" stroke-width="1.0" opacity="0.85">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="4.1s" repeatCount="indefinite" begin="1.0s"/>
+    </circle>
+    <circle r="22" fill="none" stroke="#00BDFE" stroke-width="0.3" opacity="0.2"/>
+    <!-- icon -->
+    <rect x="-12" y="-5" width="9" height="10" rx="1.5" fill="none" stroke="#00BDFE" stroke-width="1.2" opacity="0.9"/>
+<rect x="3" y="-5" width="9" height="10" rx="1.5" fill="none" stroke="#00BDFE" stroke-width="1.2" opacity="0.9"/>
+<line x1="-3" y1="0" x2="3" y2="0" stroke="#00BDFE" stroke-width="1.1" opacity="0.7"/>
+<polygon points="2.5,0 -0.5,-2.5 -0.5,2.5" fill="#00BDFE" opacity="0.8"/>
+    <!-- labels -->
+    <text y="-46" text-anchor="middle" font-family="'SF Mono','Fira Code','Consolas',monospace" font-size="8.5" fill="#00BDFE" opacity="0.85" letter-spacing="2">CI / CD</text>
+    <text y="-57" text-anchor="middle" font-family="'SF Mono','Fira Code','Consolas',monospace" font-size="6.5" fill="#00BDFE" opacity="0.4" letter-spacing="1">PIPELINES</text>
+  </g>
+  <g transform="translate(799,515)">
+    <!-- outer halo -->
+    <circle r="34" fill="none" stroke="#00BDFE" stroke-width="0.4" opacity="0.10"/>
+    <!-- main ring -->
+    <circle r="28" fill="#06101e" fill-opacity="0.55"/>
+    <circle r="28" fill="none" stroke="#00BDFE" stroke-width="1.0" opacity="0.85">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="4.4s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+    <circle r="22" fill="none" stroke="#00BDFE" stroke-width="0.3" opacity="0.2"/>
+    <!-- icon -->
+    <circle cx="0" cy="0" r="10" fill="none" stroke="#00BDFE" stroke-width="1.2" opacity="0.85"/>
+<circle cx="0" cy="0" r="3" fill="#00BDFE" opacity="0.6"/>
+<line x1="0" y1="-3" x2="0" y2="-10" stroke="#00BDFE" stroke-width="1.1" opacity="0.65"/>
+<line x1="0" y1="3" x2="0" y2="10" stroke="#00BDFE" stroke-width="1.1" opacity="0.65"/>
+<line x1="2.6" y1="-1.5" x2="8.7" y2="-5" stroke="#00BDFE" stroke-width="1.1" opacity="0.65"/>
+<line x1="-2.6" y1="1.5" x2="-8.7" y2="5" stroke="#00BDFE" stroke-width="1.1" opacity="0.65"/>
+<line x1="2.6" y1="1.5" x2="8.7" y2="5" stroke="#00BDFE" stroke-width="1.1" opacity="0.65"/>
+<line x1="-2.6" y1="-1.5" x2="-8.7" y2="-5" stroke="#00BDFE" stroke-width="1.1" opacity="0.65"/>
+    <!-- labels -->
+    <text y="46" text-anchor="middle" font-family="'SF Mono','Fira Code','Consolas',monospace" font-size="8.5" fill="#00BDFE" opacity="0.85" letter-spacing="2">COMPUTE</text>
+    <text y="58" text-anchor="middle" font-family="'SF Mono','Fira Code','Consolas',monospace" font-size="6.5" fill="#00BDFE" opacity="0.4" letter-spacing="1">KUBERNETES</text>
+  </g>
+  <g transform="translate(679,616)">
+    <!-- outer halo -->
+    <circle r="34" fill="none" stroke="#00BDFE" stroke-width="0.4" opacity="0.10"/>
+    <!-- main ring -->
+    <circle r="28" fill="#06101e" fill-opacity="0.55"/>
+    <circle r="28" fill="none" stroke="#00BDFE" stroke-width="1.0" opacity="0.85">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="4.7s" repeatCount="indefinite" begin="2.0s"/>
+    </circle>
+    <circle r="22" fill="none" stroke="#00BDFE" stroke-width="0.3" opacity="0.2"/>
+    <!-- icon -->
+    <polyline points="-10,0 -6,-7 0,0 6,7 10,0" fill="none" stroke="#00BDFE" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" opacity="0.88"/>
+    <!-- labels -->
+    <text y="46" text-anchor="middle" font-family="'SF Mono','Fira Code','Consolas',monospace" font-size="8.5" fill="#00BDFE" opacity="0.85" letter-spacing="2">MESSAGING</text>
+    <text y="58" text-anchor="middle" font-family="'SF Mono','Fira Code','Consolas',monospace" font-size="6.5" fill="#00BDFE" opacity="0.4" letter-spacing="1">KAFKA · NATS</text>
+  </g>
+  <g transform="translate(521,616)">
+    <!-- outer halo -->
+    <circle r="34" fill="none" stroke="#00BDFE" stroke-width="0.4" opacity="0.10"/>
+    <!-- main ring -->
+    <circle r="28" fill="#06101e" fill-opacity="0.55"/>
+    <circle r="28" fill="none" stroke="#00BDFE" stroke-width="1.0" opacity="0.85">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="5.0s" repeatCount="indefinite" begin="2.5s"/>
+    </circle>
+    <circle r="22" fill="none" stroke="#00BDFE" stroke-width="0.3" opacity="0.2"/>
+    <!-- icon -->
+    <polyline points="-11,3 -7,3 -3,-8 1,9 5,-5 9,3 13,3" fill="none" stroke="#00BDFE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.88"/>
+    <!-- labels -->
+    <text y="46" text-anchor="middle" font-family="'SF Mono','Fira Code','Consolas',monospace" font-size="8.5" fill="#00BDFE" opacity="0.85" letter-spacing="2">OBSERVABILITY</text>
+    <text y="58" text-anchor="middle" font-family="'SF Mono','Fira Code','Consolas',monospace" font-size="6.5" fill="#00BDFE" opacity="0.4" letter-spacing="1">OTEL · TRACES</text>
+  </g>
+  <g transform="translate(401,515)">
+    <!-- outer halo -->
+    <circle r="34" fill="none" stroke="#00BDFE" stroke-width="0.4" opacity="0.10"/>
+    <!-- main ring -->
+    <circle r="28" fill="#06101e" fill-opacity="0.55"/>
+    <circle r="28" fill="none" stroke="#00BDFE" stroke-width="1.0" opacity="0.85">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="5.3s" repeatCount="indefinite" begin="3.0s"/>
+    </circle>
+    <circle r="22" fill="none" stroke="#00BDFE" stroke-width="0.3" opacity="0.2"/>
+    <!-- icon -->
+    <path d="M0,-12 L10,-7 L10,2 Q10,11 0,15 Q-10,11 -10,2 L-10,-7 Z" fill="none" stroke="#00BDFE" stroke-width="1.2" opacity="0.9"/>
+<polyline points="-4,2 -1,6 6,-3" fill="none" stroke="#00BDFE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+    <!-- labels -->
+    <text y="46" text-anchor="middle" font-family="'SF Mono','Fira Code','Consolas',monospace" font-size="8.5" fill="#00BDFE" opacity="0.85" letter-spacing="2">AUTH</text>
+    <text y="58" text-anchor="middle" font-family="'SF Mono','Fira Code','Consolas',monospace" font-size="6.5" fill="#00BDFE" opacity="0.4" letter-spacing="1">IAM · VAULT</text>
+  </g>
+  <g transform="translate(373,360)">
+    <!-- outer halo -->
+    <circle r="34" fill="none" stroke="#00BDFE" stroke-width="0.4" opacity="0.10"/>
+    <!-- main ring -->
+    <circle r="28" fill="#06101e" fill-opacity="0.55"/>
+    <circle r="28" fill="none" stroke="#00BDFE" stroke-width="1.0" opacity="0.85">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="5.6s" repeatCount="indefinite" begin="3.5s"/>
+    </circle>
+    <circle r="22" fill="none" stroke="#00BDFE" stroke-width="0.3" opacity="0.2"/>
+    <!-- icon -->
+    <rect x="-10" y="-8" width="20" height="16" rx="2" fill="none" stroke="#00BDFE" stroke-width="1.2" opacity="0.88"/>
+<line x1="-10" y1="-2" x2="10" y2="-2" stroke="#00BDFE" stroke-width="0.9" opacity="0.55"/>
+<line x1="-10" y1="4" x2="10" y2="4" stroke="#00BDFE" stroke-width="0.9" opacity="0.35"/>
+    <!-- labels -->
+    <text y="-46" text-anchor="middle" font-family="'SF Mono','Fira Code','Consolas',monospace" font-size="8.5" fill="#00BDFE" opacity="0.85" letter-spacing="2">STORAGE</text>
+    <text y="-57" text-anchor="middle" font-family="'SF Mono','Fira Code','Consolas',monospace" font-size="6.5" fill="#00BDFE" opacity="0.4" letter-spacing="1">S3 · REGISTRY</text>
+  </g>
+  <g transform="translate(452,224)">
+    <!-- outer halo -->
+    <circle r="34" fill="none" stroke="#00BDFE" stroke-width="0.4" opacity="0.10"/>
+    <!-- main ring -->
+    <circle r="28" fill="#06101e" fill-opacity="0.55"/>
+    <circle r="28" fill="none" stroke="#00BDFE" stroke-width="1.0" opacity="0.85">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="5.9s" repeatCount="indefinite" begin="4.0s"/>
+    </circle>
+    <circle r="22" fill="none" stroke="#00BDFE" stroke-width="0.3" opacity="0.2"/>
+    <!-- icon -->
+    <circle cx="0" cy="-3" r="9" fill="none" stroke="#00BDFE" stroke-width="1.1" opacity="0.88"/>
+<circle cx="-3" cy="-3" r="2" fill="#00BDFE" opacity="0.7"/>
+<circle cx="3" cy="-3" r="2" fill="#00BDFE" opacity="0.7"/>
+<line x1="-4" y1="5" x2="-4" y2="9" stroke="#00BDFE" stroke-width="1" opacity="0.65"/>
+<line x1="4" y1="5" x2="4" y2="9" stroke="#00BDFE" stroke-width="1" opacity="0.65"/>
+<line x1="-4" y1="9" x2="4" y2="9" stroke="#00BDFE" stroke-width="1" opacity="0.65"/>
+    <!-- labels -->
+    <text y="-46" text-anchor="middle" font-family="'SF Mono','Fira Code','Consolas',monospace" font-size="8.5" fill="#00BDFE" opacity="0.85" letter-spacing="2">LLM</text>
+    <text y="-57" text-anchor="middle" font-family="'SF Mono','Fira Code','Consolas',monospace" font-size="6.5" fill="#00BDFE" opacity="0.4" letter-spacing="1">GPT · CLAUDE</text>
+  </g>
+
+  <!-- CENTER NODE -->
+  <g>
+    <!-- Halo glow -->
+    <circle cx="600" cy="400" r="180" fill="url(#g-core-halo)">
+      <animate attributeName="r" values="170;190;170" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Outer dashed orbit ring -->
+    <circle cx="600" cy="400" r="90" fill="none" stroke="#00BDFE" stroke-width="0.5" stroke-dasharray="6 14" opacity="0.18">
+      <animateTransform attributeName="transform" type="rotate" from="0 600 400" to="360 600 400" dur="40s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="400" r="80" fill="none" stroke="#00BDFE" stroke-width="0.3" stroke-dasharray="3 18" opacity="0.10">
+      <animateTransform attributeName="transform" type="rotate" from="360 600 400" to="0 600 400" dur="28s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Frosted halo ring -->
+    <circle cx="600" cy="400" r="74" fill="none" stroke="#00BDFE" stroke-width="0.6" opacity="0.18"/>
+    <!-- Core fill -->
+    <circle cx="600" cy="400" r="68" fill="url(#g-core-fill)" fill-opacity="0.4"/>
+    <!-- Breathing glow ring -->
+    <circle cx="600" cy="400" r="68" fill="none" stroke="#00BDFE" stroke-width="1.8" filter="url(#f-core)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="400" r="60" fill="none" stroke="#00BDFE" stroke-width="0.4" opacity="0.2"/>
+    <!-- Orydle Logo — path 1 (main shape) scaled 0.155, centered at (600,400) -->
+    <g transform="translate(524.51,324.98) scale(0.155)" filter="url(#f-logo)">
+      <path d="M0,0 L6,0 L6,1 L9,1 L9,2 L10,2 L10,3 L12,3 L12,4 L13,4 L13,5 L14,5 L14,6 L15,6 L15,7 L16,7 L16,8 L17,8 L17,9 L18,9 L18,10 L19,10 L19,11 L20,11 L20,12 L21,12 L21,13 L22,13 L22,14 L24,14 L24,16 L26,16 L26,18 L27,18 L27,19 L29,19 L29,21 L30,21 L30,22 L32,22 L32,23 L33,23 L33,24 L34,24 L34,26 L35,26 L35,27 L37,27 L37,28 L38,28 L38,30 L40,30 L40,31 L41,31 L41,32 L42,32 L42,33 L43,33 L43,34 L44,34 L44,35 L45,35 L45,36 L46,36 L46,37 L47,37 L47,38 L48,38 L48,39 L49,39 L49,40 L50,40 L50,41 L51,41 L51,42 L52,42 L52,43 L53,43 L53,44 L54,44 L54,45 L55,45 L55,46 L56,46 L56,47 L57,47 L57,48 L58,48 L58,49 L59,49 L59,50 L60,50 L60,51 L61,51 L61,52 L62,52 L62,53 L63,53 L63,54 L64,54 L64,55 L65,55 L65,56 L66,56 L66,57 L67,57 L67,58 L68,58 L68,59 L69,59 L69,60 L70,60 L70,61 L71,61 L71,62 L72,62 L72,63 L73,63 L73,64 L74,64 L74,65 L75,65 L75,68 L76,68 L76,71 L75,71 L75,72 L74,72 L74,74 L72,74 L72,75 L55,75 L55,76 L45,76 L45,77 L38,77 L38,78 L32,78 L32,79 L27,79 L27,80 L23,80 L23,81 L20,81 L20,82 L17,82 L17,83 L14,83 L14,84 L11,84 L11,85 L9,85 L9,86 L7,86 L7,87 L4,87 L4,88 L2,88 L2,89 L0,89 L0,90 L-2,90 L-2,91 L-4,91 L-4,92 L-6,92 L-6,93 L-8,93 L-8,94 L-9,94 L-9,95 L-11,95 L-11,96 L-13,96 L-13,97 L-14,97 L-14,98 L-16,98 L-16,99 L-17,99 L-17,100 L-18,100 L-18,101 L-20,101 L-20,102 L-21,102 L-21,103 L-23,103 L-23,104 L-24,104 L-24,105 L-25,105 L-25,106 L-26,106 L-26,107 L-27,107 L-27,108 L-28,108 L-28,109 L-30,109 L-30,110 L-31,110 L-31,111 L-32,111 L-32,112 L-33,112 L-33,113 L-34,113 L-34,114 L-35,114 L-35,115 L-36,115 L-36,116 L-37,116 L-37,117 L-38,117 L-38,118 L-39,118 L-39,119 L-40,119 L-40,120 L-41,120 L-41,121 L-42,121 L-42,122 L-43,122 L-43,124 L-44,124 L-44,125 L-45,125 L-45,126 L-46,126 L-46,127 L-47,127 L-47,128 L-48,128 L-48,130 L-49,130 L-49,131 L-50,131 L-50,132 L-51,132 L-51,134 L-52,134 L-52,135 L-53,135 L-53,137 L-54,137 L-54,138 L-55,138 L-55,140 L-56,140 L-56,141 L-57,141 L-57,143 L-58,143 L-58,144 L-59,144 L-59,146 L-60,146 L-60,148 L-61,148 L-61,150 L-62,150 L-62,151 L-63,151 L-63,153 L-64,153 L-64,155 L-65,155 L-65,158 L-66,158 L-66,160 L-67,160 L-67,162 L-68,162 L-68,165 L-69,165 L-69,168 L-70,168 L-70,170 L-71,170 L-71,174 L-72,174 L-72,177 L-73,177 L-73,181 L-74,181 L-74,185 L-75,185 L-75,190 L-76,190 L-76,197 L-77,197 L-77,207 L-78,207 L-78,222 L-77,222 L-77,223 L-78,223 L-78,224 L-77,224 L-77,235 L-76,235 L-76,242 L-75,242 L-75,246 L-74,246 L-74,251 L-73,251 L-73,255 L-72,255 L-72,258 L-71,258 L-71,262 L-70,262 L-70,264 L-69,264 L-69,267 L-68,267 L-68,270 L-67,270 L-67,272 L-66,272 L-66,275 L-65,275 L-65,277 L-64,277 L-64,279 L-63,279 L-63,281 L-62,281 L-62,283 L-61,283 L-61,285 L-60,285 L-60,287 L-59,287 L-59,289 L-58,289 L-58,291 L-57,291 L-57,292 L-56,292 L-56,294 L-55,294 L-55,296 L-54,296 L-54,297 L-53,297 L-53,299 L-52,299 L-52,300 L-51,300 L-51,301 L-50,301 L-50,303 L-49,303 L-49,304 L-48,304 L-48,306 L-47,306 L-47,307 L-46,307 L-46,308 L-45,308 L-45,309 L-44,309 L-44,310 L-43,310 L-43,312 L-42,312 L-42,313 L-41,313 L-41,314 L-40,314 L-40,315 L-39,315 L-39,316 L-38,316 L-38,317 L-37,317 L-37,318 L-36,318 L-36,319 L-35,319 L-35,320 L-34,320 L-34,321 L-33,321 L-33,322 L-32,322 L-32,323 L-31,323 L-31,324 L-30,324 L-30,325 L-29,325 L-29,326 L-28,326 L-28,327 L-27,327 L-27,328 L-26,328 L-26,329 L-24,329 L-24,330 L-23,330 L-23,331 L-22,331 L-22,332 L-21,332 L-21,333 L-20,333 L-20,334 L-18,334 L-18,335 L-17,335 L-17,336 L-15,336 L-15,337 L-14,337 L-14,338 L-13,338 L-13,339 L-11,339 L-11,340 L-9,340 L-9,341 L-8,341 L-8,342 L-6,342 L-6,343 L-5,343 L-5,344 L-3,344 L-3,345 L-1,345 L-1,346 L1,346 L1,347 L3,347 L3,348 L4,348 L4,349 L7,349 L7,350 L9,350 L9,351 L11,351 L11,352 L13,352 L13,353 L16,353 L16,354 L18,354 L18,355 L21,355 L21,356 L24,356 L24,357 L27,357 L27,358 L31,358 L31,359 L35,359 L35,360 L40,360 L40,361 L45,361 L45,362 L52,362 L52,363 L61,363 L61,364 L78,364 L78,363 L90,363 L90,362 L96,362 L96,361 L102,361 L102,360 L106,360 L106,359 L110,359 L110,358 L113,358 L113,357 L117,357 L117,356 L119,356 L119,355 L122,355 L122,354 L125,354 L125,353 L128,353 L128,352 L130,352 L130,351 L132,351 L132,350 L135,350 L135,349 L137,349 L137,348 L139,348 L139,347 L141,347 L141,346 L142,346 L142,345 L144,345 L144,344 L146,344 L146,343 L148,343 L148,342 L150,342 L150,341 L151,341 L151,340 L153,340 L153,339 L154,339 L154,338 L156,338 L156,337 L157,337 L157,336 L159,336 L159,335 L160,335 L160,334 L161,334 L161,333 L163,333 L163,332 L164,332 L164,331 L165,331 L165,330 L166,330 L166,329 L167,329 L167,328 L169,328 L169,327 L170,327 L170,326 L171,326 L171,325 L172,325 L172,324 L173,324 L173,323 L174,323 L174,322 L175,322 L175,321 L176,321 L176,320 L177,320 L177,319 L178,319 L178,318 L179,318 L179,317 L180,317 L180,316 L181,316 L181,315 L182,315 L182,314 L183,314 L183,313 L184,313 L184,312 L185,312 L185,310 L186,310 L186,309 L187,309 L187,308 L188,308 L188,307 L189,307 L189,305 L190,305 L190,304 L191,304 L191,303 L192,303 L192,301 L193,301 L193,300 L194,300 L194,299 L195,299 L195,297 L196,297 L196,296 L197,296 L197,294 L198,294 L198,292 L199,292 L199,291 L200,291 L200,289 L201,289 L201,287 L202,287 L202,285 L203,285 L203,283 L204,283 L204,281 L205,281 L205,279 L206,279 L206,277 L207,277 L207,275 L208,275 L208,272 L209,272 L209,270 L210,270 L210,267 L211,267 L211,264 L212,264 L212,260 L213,260 L213,257 L214,257 L214,253 L215,253 L215,249 L216,249 L216,244 L217,244 L217,237 L218,237 L218,228 L219,228 L219,209 L218,209 L218,200 L217,200 L217,194 L216,194 L216,188 L215,188 L215,184 L214,184 L214,181 L213,181 L213,177 L212,177 L212,174 L211,174 L211,171 L210,171 L210,168 L209,168 L209,165 L208,165 L208,163 L207,163 L207,161 L206,161 L206,159 L205,159 L205,157 L204,157 L204,155 L203,155 L203,153 L202,153 L202,151 L201,151 L201,149 L200,149 L200,148 L199,148 L199,146 L198,146 L198,145 L197,145 L197,143 L196,143 L196,142 L195,142 L195,140 L194,140 L194,137 L193,137 L193,136 L194,136 L194,131 L195,131 L195,129 L196,129 L196,128 L197,128 L197,127 L198,127 L198,126 L199,126 L199,125 L200,125 L200,124 L201,124 L201,123 L202,123 L202,122 L203,122 L203,121 L204,121 L204,120 L205,120 L205,119 L206,119 L206,118 L207,118 L207,117 L208,117 L208,116 L209,116 L209,115 L210,115 L210,114 L211,114 L211,113 L212,113 L212,112 L213,112 L213,111 L214,111 L214,110 L215,110 L215,109 L217,109 L217,108 L218,108 L218,107 L219,107 L219,105 L221,105 L221,104 L222,104 L222,102 L223,102 L223,101 L225,101 L225,100 L226,100 L226,99 L228,99 L228,98 L230,98 L230,97 L234,97 L234,98 L237,98 L237,99 L238,99 L238,100 L239,100 L239,101 L240,101 L240,102 L241,102 L241,103 L242,103 L242,104 L243,104 L243,106 L244,106 L244,108 L245,108 L245,109 L246,109 L246,111 L247,111 L247,113 L248,113 L248,114 L249,114 L249,116 L250,116 L250,118 L251,118 L251,120 L252,120 L252,122 L253,122 L253,124 L254,124 L254,126 L255,126 L255,127 L256,127 L256,129 L257,129 L257,132 L258,132 L258,134 L259,134 L259,136 L260,136 L260,138 L261,138 L261,141 L262,141 L262,143 L263,143 L263,146 L264,146 L264,149 L265,149 L265,151 L266,151 L266,154 L267,154 L267,158 L268,158 L268,161 L269,161 L269,165 L270,165 L270,168 L271,168 L271,173 L272,173 L272,177 L273,177 L273,182 L274,182 L274,190 L275,190 L275,199 L276,199 L276,230 L275,230 L275,240 L274,240 L274,247 L273,247 L273,253 L272,253 L272,258 L271,258 L271,263 L270,263 L270,267 L269,267 L269,271 L268,271 L268,274 L267,274 L267,278 L266,278 L266,280 L265,280 L265,283 L264,283 L264,286 L263,286 L263,289 L262,289 L262,291 L261,291 L261,294 L260,294 L260,296 L259,296 L259,299 L258,299 L258,301 L257,301 L257,303 L256,303 L256,305 L255,305 L255,307 L254,307 L254,309 L253,309 L253,311 L252,311 L252,313 L251,313 L251,315 L250,315 L250,317 L249,317 L249,318 L248,318 L248,320 L247,320 L247,322 L246,322 L246,323 L245,323 L245,325 L244,325 L244,326 L243,326 L243,328 L242,328 L242,330 L241,330 L241,331 L240,331 L240,332 L239,332 L239,334 L238,334 L238,335 L237,335 L237,337 L236,337 L236,338 L235,338 L235,339 L234,339 L234,341 L233,341 L233,342 L232,342 L232,343 L231,343 L231,344 L230,344 L230,346 L229,346 L229,347 L228,347 L228,348 L227,348 L227,349 L226,349 L226,350 L225,350 L225,351 L224,351 L224,353 L223,353 L223,354 L222,354 L222,355 L221,355 L221,356 L220,356 L220,357 L219,357 L219,358 L218,358 L218,359 L217,359 L217,360 L216,360 L216,361 L215,361 L215,362 L214,362 L214,363 L213,363 L213,364 L212,364 L212,365 L211,365 L211,366 L210,366 L210,367 L209,367 L209,368 L208,368 L208,369 L207,369 L207,370 L206,370 L206,371 L204,371 L204,372 L203,372 L203,373 L202,373 L202,374 L201,374 L201,375 L200,375 L200,376 L198,376 L198,377 L197,377 L197,378 L196,378 L196,379 L195,379 L195,380 L194,380 L194,381 L192,381 L192,382 L191,382 L191,383 L189,383 L189,384 L188,384 L188,385 L187,385 L187,386 L185,386 L185,387 L184,387 L184,388 L182,388 L182,389 L181,389 L181,390 L179,390 L179,391 L178,391 L178,392 L176,392 L176,393 L174,393 L174,394 L173,394 L173,395 L171,395 L171,396 L169,396 L169,397 L167,397 L167,398 L165,398 L165,399 L163,399 L163,400 L161,400 L161,401 L159,401 L159,402 L158,402 L158,403 L155,403 L155,404 L153,404 L153,405 L151,405 L151,406 L148,406 L148,407 L146,407 L146,408 L143,408 L143,409 L141,409 L141,410 L138,410 L138,411 L135,411 L135,412 L132,412 L132,413 L129,413 L129,414 L126,414 L126,415 L122,415 L122,416 L118,416 L118,417 L113,417 L113,418 L108,418 L108,419 L101,419 L101,420 L94,420 L94,421 L81,421 L81,422 L64,422 L64,421 L50,421 L50,420 L42,420 L42,419 L36,419 L36,418 L31,418 L31,417 L27,417 L27,416 L22,416 L22,415 L18,415 L18,414 L15,414 L15,413 L11,413 L11,412 L8,412 L8,411 L5,411 L5,410 L3,410 L3,409 L0,409 L0,408 L-3,408 L-3,407 L-5,407 L-5,406 L-8,406 L-8,405 L-10,405 L-10,404 L-13,404 L-13,403 L-15,403 L-15,402 L-17,402 L-17,401 L-19,401 L-19,400 L-21,400 L-21,399 L-23,399 L-23,398 L-25,398 L-25,397 L-27,397 L-27,396 L-28,396 L-28,395 L-30,395 L-30,394 L-32,394 L-32,393 L-34,393 L-34,392 L-35,392 L-35,391 L-37,391 L-37,390 L-38,390 L-38,389 L-40,389 L-40,388 L-41,388 L-41,387 L-43,387 L-43,386 L-44,386 L-44,385 L-46,385 L-46,384 L-47,384 L-47,383 L-49,383 L-49,382 L-50,382 L-50,381 L-51,381 L-51,380 L-52,380 L-52,379 L-54,379 L-54,378 L-55,378 L-55,377 L-56,377 L-56,376 L-58,376 L-58,375 L-59,375 L-59,374 L-60,374 L-60,373 L-61,373 L-61,372 L-62,372 L-62,371 L-63,371 L-63,370 L-64,370 L-64,369 L-66,369 L-66,367 L-68,367 L-68,366 L-69,366 L-69,365 L-70,365 L-70,364 L-71,364 L-71,363 L-72,363 L-72,362 L-73,362 L-73,361 L-74,361 L-74,360 L-75,360 L-75,359 L-76,359 L-76,358 L-77,358 L-77,357 L-78,357 L-78,355 L-79,355 L-79,354 L-80,354 L-80,353 L-81,353 L-81,352 L-82,352 L-82,351 L-83,351 L-83,350 L-84,350 L-84,349 L-85,349 L-85,347 L-86,347 L-86,346 L-87,346 L-87,345 L-88,345 L-88,344 L-89,344 L-89,342 L-90,342 L-90,341 L-91,341 L-91,340 L-92,340 L-92,338 L-93,338 L-93,337 L-94,337 L-94,336 L-95,336 L-95,334 L-96,334 L-96,333 L-97,333 L-97,332 L-98,332 L-98,330 L-99,330 L-99,329 L-100,329 L-100,327 L-101,327 L-101,326 L-102,326 L-102,324 L-103,324 L-103,322 L-104,322 L-104,321 L-105,321 L-105,319 L-106,319 L-106,317 L-107,317 L-107,315 L-108,315 L-108,314 L-109,314 L-109,312 L-110,312 L-110,310 L-111,310 L-111,308 L-112,308 L-112,306 L-113,306 L-113,304 L-114,304 L-114,302 L-115,302 L-115,299 L-116,299 L-116,297 L-117,297 L-117,295 L-118,295 L-118,292 L-119,292 L-119,290 L-120,290 L-120,287 L-121,287 L-121,284 L-122,284 L-122,281 L-123,281 L-123,279 L-124,279 L-124,276 L-125,276 L-125,272 L-126,272 L-126,268 L-127,268 L-127,264 L-128,264 L-128,259 L-129,259 L-129,255 L-130,255 L-130,250 L-131,250 L-131,244 L-132,244 L-132,236 L-133,236 L-133,223 L-134,223 L-134,208 L-133,208 L-133,195 L-132,195 L-132,187 L-131,187 L-131,180 L-130,180 L-130,175 L-129,175 L-129,171 L-128,171 L-128,166 L-127,166 L-127,162 L-126,162 L-126,158 L-125,158 L-125,155 L-124,155 L-124,152 L-123,152 L-123,149 L-122,149 L-122,146 L-121,146 L-121,143 L-120,143 L-120,141 L-119,141 L-119,138 L-118,138 L-118,136 L-117,136 L-117,134 L-116,134 L-116,132 L-115,132 L-115,129 L-114,129 L-114,127 L-113,127 L-113,125 L-112,125 L-112,124 L-111,124 L-111,122 L-110,122 L-110,120 L-109,120 L-109,118 L-108,118 L-108,116 L-107,116 L-107,114 L-106,114 L-106,113 L-105,113 L-105,111 L-104,111 L-104,110 L-103,110 L-103,108 L-102,108 L-102,106 L-101,106 L-101,105 L-100,105 L-100,103 L-99,103 L-99,102 L-98,102 L-98,100 L-97,100 L-97,99 L-96,99 L-96,97 L-95,97 L-95,96 L-94,96 L-94,95 L-93,95 L-93,93 L-92,93 L-92,92 L-91,92 L-91,90 L-90,90 L-90,89 L-89,89 L-89,88 L-88,88 L-88,86 L-87,86 L-87,85 L-86,85 L-86,84 L-85,84 L-85,83 L-84,83 L-84,82 L-83,82 L-83,81 L-82,81 L-82,79 L-81,79 L-81,78 L-80,78 L-80,77 L-79,77 L-79,76 L-78,76 L-78,75 L-77,75 L-77,73 L-76,73 L-76,72 L-74,72 L-74,70 L-73,70 L-73,69 L-72,69 L-72,68 L-71,68 L-71,67 L-70,67 L-70,66 L-69,66 L-69,65 L-68,65 L-68,64 L-67,64 L-67,63 L-66,63 L-66,62 L-65,62 L-65,61 L-64,61 L-64,60 L-63,60 L-63,59 L-62,59 L-62,58 L-61,58 L-61,57 L-60,57 L-60,56 L-58,56 L-58,54 L-57,54 L-57,53 L-56,53 L-56,52 L-55,52 L-55,51 L-54,51 L-54,50 L-53,50 L-53,49 L-52,49 L-52,48 L-50,48 L-50,47 L-49,47 L-49,45 L-48,45 L-48,44 L-47,44 L-47,43 L-46,43 L-46,42 L-45,42 L-45,41 L-44,41 L-44,40 L-42,40 L-42,38 L-41,38 L-41,37 L-39,37 L-39,35 L-38,35 L-38,34 L-37,34 L-37,33 L-36,33 L-36,32 L-34,32 L-34,30 L-33,30 L-33,29 L-32,29 L-32,28 L-31,28 L-31,27 L-30,27 L-30,26 L-29,26 L-29,25 L-28,25 L-28,24 L-27,24 L-27,23 L-26,23 L-26,22 L-25,22 L-25,21 L-23,21 L-23,19 L-21,19 L-21,17 L-19,17 L-19,16 L-18,16 L-18,15 L-17,15 L-17,13 L-15,13 L-15,12 L-14,12 L-14,11 L-13,11 L-13,9 L-11,9 L-11,8 L-10,8 L-10,7 L-9,7 L-9,6 L-8,6 L-8,5 L-7,5 L-7,4 L-6,4 L-6,3 L-4,3 L-4,2 L-3,2 L-3,1 L0,1 Z" fill="#00BDFE" transform="translate(409,354)"/>
+    </g>
+    <!-- SYSTEM CORE label -->
+    <text x="600" y="492" text-anchor="middle" font-family="'SF Mono','Fira Code','Consolas',monospace" font-size="8.5" fill="#00BDFE" opacity="0.55" letter-spacing="5">SYSTEM CORE</text>
+  </g>
+
+  <!-- Status chip -->
+  <g transform="translate(930,30)">
+    <rect width="220" height="28" rx="4" fill="#030d1a" stroke="#00BDFE" stroke-width="0.7"/>
+    <circle cx="14" cy="14" r="3" fill="#00BDFE"><animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/></circle>
+    <text x="26" y="18" font-family="'SF Mono','Fira Code','Consolas',monospace" font-size="8" fill="#00BDFE" opacity="0.75" letter-spacing="1.5">LIVE · 9 SERVICES MAPPED</text>
+  </g>
+</svg>

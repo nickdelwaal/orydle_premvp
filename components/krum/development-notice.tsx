@@ -12,7 +12,7 @@ export function DevelopmentNotice() {
           </p>
 
           <div className="mt-8 flex justify-center">
-            <Link href="/request-access" className="btn-pill-primary min-h-11 px-7 py-3 text-[15px]">
+            <Link href="/request-access" className="cta-button">
               Request Early Access
             </Link>
           </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -14,84 +14,12 @@ const navLinks = [
   { href: "/security", label: "Security" },
 ];
 
-const THEME_STORAGE_KEY = "orydle-theme";
-type ThemeMode = "dark" | "light";
 
-function SunIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
-      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.7" />
-      <path d="M12 2.8v2.4M12 18.8v2.4M3.4 12h2.4M18.2 12h2.4M5.9 5.9l1.7 1.7M16.4 16.4l1.7 1.7M18.1 5.9l-1.7 1.7M7.6 16.4l-1.7 1.7" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function MoonIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
-      <path
-        d="M20.2 14.7A8.5 8.5 0 0 1 9.3 3.8a8.7 8.7 0 1 0 10.9 10.9Z"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function ThemeSwitcher({
-  theme,
-  onToggle,
-  className,
-}: {
-  theme: ThemeMode;
-  onToggle: () => void;
-  className?: string;
-}) {
-  const isLight = theme === "light";
-
-  return (
-    <button
-      type="button"
-      onClick={onToggle}
-      className={cn("navbar-theme-toggle", className)}
-      aria-label={isLight ? "Switch to dark mode" : "Switch to light mode"}
-      aria-pressed={isLight}
-    >
-      <span className={cn("navbar-theme-toggle-thumb", isLight && "is-light")} aria-hidden="true" />
-      <span className={cn("navbar-theme-toggle-slot", !isLight && "is-active")} aria-hidden="true">
-        <MoonIcon />
-      </span>
-      <span className={cn("navbar-theme-toggle-slot", isLight && "is-active")} aria-hidden="true">
-        <SunIcon />
-      </span>
-    </button>
-  );
-}
 
 export function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [theme, setTheme] = useState<ThemeMode>("dark");
-
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
-
-  useEffect(() => {
-    const themeAttr = document.documentElement.getAttribute("data-theme");
-    if (themeAttr === "light" || themeAttr === "dark") {
-      setTheme(themeAttr);
-    }
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    window.localStorage.setItem(THEME_STORAGE_KEY, theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
-  };
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
@@ -133,12 +61,11 @@ export function Navbar() {
           </nav>
 
           <div className="hidden items-center gap-2 md:flex">
-            <ThemeSwitcher theme={theme} onToggle={toggleTheme} />
 
             <Link
               href="/request-access"
               className={cn(
-                "btn-pill-primary navbar-primary-cta min-h-11 px-9 py-2.5 text-[15px]",
+                "cta-button navbar-primary-cta",
                 isActive("/request-access") && "ring-2 ring-blue-electric/35"
               )}
             >
@@ -180,12 +107,10 @@ export function Navbar() {
             ))}
           </nav>
 
-          <ThemeSwitcher theme={theme} onToggle={toggleTheme} className="mt-4" />
-
           <Link
             href="/request-access"
             onClick={() => setIsMenuOpen(false)}
-            className="btn-pill-primary navbar-primary-cta mt-4 flex min-h-11 w-full items-center justify-center text-[15px]"
+            className="cta-button navbar-primary-cta mt-4 flex w-full items-center justify-center"
           >
             Request Access
           </Link>

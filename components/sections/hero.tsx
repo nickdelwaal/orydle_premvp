@@ -102,7 +102,7 @@ export function Hero() {
                 <motion.div variants={itemVariants} className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                     <Link
                         href="/request-access"
-                        className="btn-primary group inline-flex items-center gap-2 rounded-xl px-10 py-5 text-lg"
+                        className="cta-button group inline-flex items-center gap-2"
                     >
                         Request Early Access
                         <span className="inline-block transition-transform group-hover:translate-x-1">

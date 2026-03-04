@@ -28,7 +28,7 @@ export function FinalCTA() {
                     </p>
 
                     <div className="flex flex-col justify-center gap-4 sm:flex-row">
-                        <Link href="/request-access" className="btn-primary rounded-xl px-10 py-5 text-lg">
+                        <Link href="/request-access" className="cta-button">
                             Request Early Access
                         </Link>
 

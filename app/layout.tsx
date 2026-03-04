@@ -2,6 +2,22 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { Instrument_Sans, Newsreader } from "next/font/google";
+
+const instrumentSans = Instrument_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-instrument",
+  display: "swap",
+});
+
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  weight: ["200", "300", "400"],
+  style: ["normal", "italic"],
+  variable: "--font-newsreader",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Orydle AI - AI for software systems",
@@ -43,14 +59,9 @@ export default function RootLayout({
           }}
         />
         <link rel="icon" type="image/svg+xml" sizes="any" href="/transparent_bg_brandmark.svg?v=1" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap"
-          rel="stylesheet"
-        />
+        <link rel="icon" type="image/svg+xml" sizes="any" href="/transparent_bg_brandmark.svg?v=1" />
       </head>
-      <body className="antialiased">
+      <body className={`antialiased ${instrumentSans.variable} ${newsreader.variable}`}>
         <Navbar />
         <main className="site-main">{children}</main>
         <Footer />

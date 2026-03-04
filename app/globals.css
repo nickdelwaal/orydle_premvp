@@ -241,42 +241,92 @@ html[data-theme="light"] .blueprint-box {
   letter-spacing: -0.02em;
 }
 
+/* ── Primary CTA Button ── */
+.cta-button,
 .btn-pill-primary,
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-pill);
-  background: var(--accent-electric);
-  color: #e7e5e4;
-  border: 1px solid transparent;
-  font-weight: 600;
-  transition: transform var(--motion-standard), background-color var(--motion-standard), color var(--motion-standard), border-color var(--motion-standard), box-shadow var(--motion-standard);
+  background: #255bfc;
+  border-radius: 12px;
+  padding: 14px 32px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+  border: 1px solid rgba(37, 91, 252, 0.3);
+  box-shadow: 0 0 20px rgba(37, 91, 252, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: buttonGlow 3s ease-in-out infinite;
 }
 
+.cta-button:hover,
 .btn-pill-primary:hover,
 .btn-primary:hover {
-  background: var(--accent-electric-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 14px 30px rgba(37, 91, 252, 0.3);
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(37, 91, 252, 0.6);
+  background: #3D6FFD;
+}
+
+.cta-button:focus,
+.btn-pill-primary:focus,
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 91, 252, 0.5), 0 0 30px rgba(37, 91, 252, 0.6);
+}
+
+.cta-button:active,
+.btn-pill-primary:active,
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Glow animation */
+@keyframes buttonGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(37, 91, 252, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(37, 91, 252, 0.6);
+  }
+}
+
+/* Shimmer effect */
+.cta-button::before,
+.btn-pill-primary::before,
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg,
+      transparent,
+      rgba(255, 255, 255, 0.15),
+      transparent);
+  transform: rotate(45deg);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
 }
 
 .navbar-primary-cta {
   transform-origin: center;
-  transition: transform var(--motion-standard), background-color var(--motion-standard), color var(--motion-standard), box-shadow var(--motion-standard);
-  box-shadow:
-    0 0 0 1px rgba(63, 112, 255, 0.16),
-    0 8px 18px rgba(37, 91, 252, 0.2),
-    0 0 18px rgba(63, 112, 255, 0.14);
-}
-
-.navbar-primary-cta:hover {
-  background: var(--accent-electric-hover);
-  transform: scale(1.08);
-  box-shadow:
-    0 0 0 1px rgba(63, 112, 255, 0.24),
-    0 12px 24px rgba(37, 91, 252, 0.26),
-    0 0 24px rgba(63, 112, 255, 0.22);
 }
 
 .navbar-theme-toggle {
@@ -599,13 +649,14 @@ html[data-theme="light"] .btn-pill-ghost.footer-light:hover {
 }
 
 .folder-tab {
+  position: relative;
+  overflow: hidden;
   border: 1px solid var(--border-soft);
-  border-bottom: none;
   background: rgba(231, 229, 228, 0.08);
   color: rgba(231, 229, 228, 0.8);
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;
-  transition: transform var(--motion-standard), background-color var(--motion-standard), color var(--motion-standard), box-shadow var(--motion-standard);
+  transition: color 200ms ease;
 }
 
 html[data-theme="light"] .folder-tab {
@@ -615,10 +666,8 @@ html[data-theme="light"] .folder-tab {
 }
 
 .folder-tab-active {
-  background: var(--accent-electric);
   color: var(--fg-stone);
-  transform: translateY(-4px) scale(1.02) rotate(-1deg);
-  box-shadow: 0 12px 30px rgba(37, 91, 252, 0.32);
+  border-color: transparent;
 }
 
 html[data-theme="light"] .folder-tab-active {
@@ -709,6 +758,7 @@ html[data-theme="light"] .folder-tab-active {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -718,4 +768,3 @@ html[data-theme="light"] .folder-tab-active {
     scroll-behavior: auto !important;
   }
 }
-

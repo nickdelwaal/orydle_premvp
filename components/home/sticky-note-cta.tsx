@@ -16,7 +16,7 @@ export function StickyNoteCta() {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/request-access"
-              className="inline-flex items-center rounded-full border border-[#1c1917]/25 bg-[#1c1917] px-7 py-3 text-[15px] font-semibold text-[#e7e5e4] transition-colors hover:bg-black"
+              className="cta-button"
             >
               Request Access
             </Link>
