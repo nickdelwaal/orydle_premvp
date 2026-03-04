@@ -2,7 +2,9 @@
 
 import { useRef } from "react";
 import { SerratedDivider } from "@/components/ui/serrated-divider";
-import { motion, useInView, Variants } from "framer-motion"; const components = [
+import { motion, useInView, Variants } from "framer-motion";
+
+const components = [
   {
     title: "Visual Builder",
     items: [
@@ -34,7 +36,8 @@ import { motion, useInView, Variants } from "framer-motion"; const components = 
       "Implementation scaffolding",
     ],
     intro: "From the system model, we produce:",
-    outro: "The code is real, editable, and yours. We don\u2019t hide complexity\u2014we organize it.",
+    outro:
+      "The code is real, editable, and yours. We don\u2019t hide complexity\u2014we organize it.",
   },
   {
     title: "AI Assistance",
@@ -44,7 +47,8 @@ import { motion, useInView, Variants } from "framer-motion"; const components = 
       "Generate implementation details",
     ],
     intro: "AI helps you:",
-    outro: "But AI is not the source of truth. The system model is. AI suggestions are constrained by architectural rules.",
+    outro:
+      "But AI is not the source of truth. The system model is. AI suggestions are constrained by architectural rules.",
   },
 ];
 
@@ -52,42 +56,33 @@ export function EngineeringPhilosophy() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.14,
-      },
-    },
-  };
-
-  const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
+  const fadeUp: Variants = {
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: "easeOut" }
+      transition: { duration: 0.5, ease: "easeOut" },
     },
   };
 
-  const lineVariants: Variants = {
-    hidden: { strokeDashoffset: 120, opacity: 0 },
+  const containerFadeUp: Variants = {
+    hidden: { opacity: 0, y: 20 },
     visible: {
-      strokeDashoffset: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeInOut", delay: 0.4 }
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut", delay: 0.1 },
     },
   };
 
   return (
     <section className="px-6 pb-24 pt-12 relative" ref={ref}>
       <div className="mx-auto max-w-6xl relative z-10">
-
+        {/* Heading */}
         <motion.div
           className="mb-12 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          variants={fadeUp}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
         >
           <p className="ui-label mb-3">Core Components</p>
           <h2 className="editorial-h2 text-platinum">
@@ -95,95 +90,62 @@ export function EngineeringPhilosophy() {
           </h2>
         </motion.div>
 
-        <div className="surface-panel relative overflow-visible p-6 md:p-8">
-          <SerratedDivider className="absolute left-0 right-0 top-0" />
+        {/* Softer Architectural Surface Container */}
+        <motion.div
+          className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#161413] to-[#0f0d0c] p-6 lg:p-10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.02)]"
+          variants={containerFadeUp}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          <SerratedDivider className="absolute left-0 right-0 top-0 opacity-50" />
 
-          {/* SVG Connection Lines Overlay (Visible mostly on Desktop 2x2 grid) */}
-          <div className="absolute inset-0 pointer-events-none hidden md:block" aria-hidden="true" style={{ zIndex: -1 }}>
-            <svg className="w-full h-full" overflow="visible">
-              {/* Card 01 -> 02 (Horizontal Top) */}
-              <motion.path
-                d="M 25% 150 C 35% 150, 65% 150, 75% 150"
-                fill="none"
-                stroke="rgba(120,160,255,0.18)"
-                strokeWidth="1.5"
-                strokeDasharray="120"
-                variants={lineVariants}
-                initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
-              />
-              {/* Card 02 -> 03 (Diagonal Right to Left) */}
-              <motion.path
-                d="M 75% 300 C 65% 350, 35% 450, 25% 480"
-                fill="none"
-                stroke="rgba(120,160,255,0.18)"
-                strokeWidth="1.5"
-                strokeDasharray="120"
-                variants={lineVariants}
-                initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
-              />
-              {/* Card 03 -> 04 (Horizontal Bottom) */}
-              <motion.path
-                d="M 25% 580 C 35% 580, 65% 580, 75% 580"
-                fill="none"
-                stroke="rgba(120,160,255,0.18)"
-                strokeWidth="1.5"
-                strokeDasharray="120"
-                variants={lineVariants}
-                initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
-              />
-              <defs>
-                <linearGradient id="line-fade" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="rgba(120,160,255,0)" />
-                  <stop offset="50%" stopColor="rgba(120,160,255,0.18)" />
-                  <stop offset="100%" stopColor="rgba(120,160,255,0)" />
-                </linearGradient>
-              </defs>
-            </svg>
+          {/* Faint radial lighting inside container */}
+          <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center overflow-hidden">
+            <div className="w-[800px] h-[800px] bg-white opacity-[0.015] rounded-full blur-[100px]" />
           </div>
 
-          <motion.div
-            className="grid gap-6 pt-4 md:grid-cols-2 relative z-10"
-            variants={containerVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-          >
+          {/* Card Grid */}
+          <div className="grid gap-6 pt-4 md:grid-cols-2 relative z-10">
             {components.map((comp, index) => (
-              <motion.article
+              <article
                 key={comp.title}
-                variants={cardVariants}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-6 shadow-lg ring-1 ring-inset ring-white/5 backdrop-blur-md transition-all duration-300 hover:-translate-y-[6px] hover:scale-[1.015] hover:border-blue-electric/20 hover:shadow-[0_16px_40px_rgba(37,91,252,0.15)]"
+                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0a0908]/40 p-6 shadow-sm backdrop-blur-sm transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:border-white/[0.15] hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)]"
               >
-                {/* Subtle Hover Highlight Inner Glow */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-electric/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
-
                 <div>
-                  <div className="mb-5 flex items-center gap-3">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-[#0f0d0c] font-mono text-[11px] text-blue-electric shadow-[0_0_15px_rgba(37,91,252,0.1)] group-hover:border-blue-electric/40 group-hover:shadow-[0_0_20px_rgba(37,91,252,0.3)] transition-all duration-300">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="editorial-h3 text-[1.35rem] text-platinum tracking-wide">{comp.title}</h3>
+                  <div className="mb-5 flex items-center gap-4">
+                    {/* Number Badge */}
+                    <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-b from-[#1a1816] to-[#0f0d0c] border border-white/5 shadow-inner">
+                      <div className="absolute inset-0 rounded-full bg-blue-100 opacity-5 blur-md" />
+                      <span className="relative z-10 font-mono text-[11px] text-platinum/70">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+                    <h3 className="editorial-h3 text-[1.35rem] text-platinum/90 tracking-wide">
+                      {comp.title}
+                    </h3>
                   </div>
-                  <p className="mb-4 text-[15px] text-platinum/70 leading-relaxed font-medium">{comp.intro}</p>
+                  <p className="mb-4 text-[15px] text-platinum/60 leading-relaxed font-normal">
+                    {comp.intro}
+                  </p>
                   <ul className="mb-6 space-y-2.5">
                     {comp.items.map((item) => (
-                      <li key={item} className="flex items-start gap-3 text-[14.5px] text-platinum/80">
-                        <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-blue-electric/80 shadow-[0_0_8px_rgba(37,91,252,0.6)]" />
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 text-[14.5px] text-platinum/75"
+                      >
+                        <span className="mt-[7px] h-[4px] w-[4px] shrink-0 rounded-full bg-platinum/30" />
                         <span className="leading-snug">{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-
-                <p className="mt-auto border-t border-white/10 pt-4 text-[13.5px] font-medium leading-relaxed text-platinum/50 group-hover:text-platinum/60 transition-colors">
+                <p className="mt-auto border-t border-white/5 pt-4 text-[13.5px] font-normal leading-relaxed text-platinum/40 group-hover:text-platinum/50 transition-colors duration-[250ms]">
                   {comp.outro}
                 </p>
-              </motion.article>
+              </article>
             ))}
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
