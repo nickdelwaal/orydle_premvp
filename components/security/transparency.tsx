@@ -1,53 +1,48 @@
-import { SerratedDivider } from "@/components/ui/serrated-divider";
+"use client";
 
-const complianceItems = [
-  "SOC 2 Type II (in progress)",
-  "GDPR compliance for EU customers",
-  "Data residency options",
-];
+import { useRef } from "react";
+import Link from "next/link";
+import { motion, useInView } from "framer-motion";
 
 export function Transparency() {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+
   return (
-    <section className="px-6 pb-24 pt-8">
-      <div className="mx-auto max-w-6xl">
-        {/* Compliance */}
-        <div className="mb-8 text-center">
-          <p className="ui-label mb-3">Standards</p>
-          <h2 className="editorial-h2 text-platinum">
-            <em>Compliance</em>
-          </h2>
-        </div>
+    <section ref={ref} className="relative px-6 py-32 overflow-hidden">
+      {/* Subtle glow */}
+      <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+        <div className="w-[500px] h-[500px] bg-blue-500 opacity-[0.02] rounded-full blur-[90px]" />
+      </div>
 
-        <div className="surface-panel relative mb-10 overflow-hidden p-6 md:p-8">
-          <SerratedDivider className="absolute left-0 right-0 top-0" />
-
-          <p className="mb-5 pt-4 text-[18px] text-platinum/70">
-            We&apos;re building with compliance in mind:
+      <div className="relative z-10 mx-auto max-w-2xl text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="text-[clamp(1.5rem,4vw,2.4rem)] leading-[1.3] tracking-[0.01em] text-platinum/80 font-[var(--font-display)] mb-2">
+            Security is built into the architecture.
           </p>
+          <p className="text-[clamp(1.5rem,4vw,2.4rem)] leading-[1.3] tracking-[0.01em] text-platinum/50 font-[var(--font-display)]">
+            <em>Not added after deployment.</em>
+          </p>
+        </motion.div>
 
-          <ul className="space-y-3">
-            {complianceItems.map((item) => (
-              <li key={item} className="surface-card flex items-start gap-3 p-5 text-[16px] text-platinum/82">
-                <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-electric" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Contact */}
-        <article className="surface-panel relative overflow-hidden p-8 text-center md:p-10">
-          <SerratedDivider className="absolute left-0 right-0 top-0" />
-
-          <div className="pt-4">
-            <p className="text-[18px] text-platinum/72">
-              Security concerns or questions about our practices?
-            </p>
-            <p className="mt-3 text-[18px] font-semibold text-blue-electric">
-              → security@orydle.com
-            </p>
-          </div>
-        </article>
+        <motion.div
+          className="mt-10"
+          initial={{ opacity: 0, y: 10 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <Link
+            href="mailto:security@orydle.com"
+            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-7 py-3.5 text-[15px] font-medium text-platinum backdrop-blur-sm transition-all duration-300 hover:border-white/25 hover:bg-white/10"
+          >
+            Contact for security details
+            <span className="text-platinum/40">→</span>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

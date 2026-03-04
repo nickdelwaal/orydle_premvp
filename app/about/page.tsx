@@ -4,7 +4,10 @@ import { Mission } from "@/components/about/mission";
 import { WhatWereBuilding } from "@/components/about/what-were-building";
 import { Founders } from "@/components/about/founders";
 import { WhoWeAre } from "@/components/about/who-we-are";
+import { ProductCredibility } from "@/components/about/product-credibility";
 import { Stage } from "@/components/about/stage";
+import { AboutManifesto } from "@/components/about/about-manifesto";
+import { AboutFinalCta } from "@/components/about/about-final-cta";
 
 export const metadata: Metadata = {
   title: "About - Orydle AI",
@@ -19,8 +22,11 @@ export default function AboutPage() {
       <Mission />
       <WhatWereBuilding />
       <Founders />
+      <ProductCredibility />
       <WhoWeAre />
       <Stage />
+      <AboutManifesto />
+      <AboutFinalCta />
     </>
   );
 }

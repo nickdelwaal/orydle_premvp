@@ -1,36 +1,71 @@
-import { SerratedDivider } from "@/components/ui/serrated-divider";
+"use client";
 
-const successMetrics = [
-  "New engineers understand systems in hours, not weeks",
-  "Architecture accuracy is guaranteed, not aspirational",
-  "Generated code is trusted as a starting point",
-  "Teams make changes with confidence, not fear",
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+
+const statements = [
+  "Software is growing faster than architecture can manage.",
+  "Systems drift.",
+  "Code diverges from design.",
+  "Teams lose control.",
 ];
 
+const conclusion = "System-first development solves this.";
+
 export function Stage() {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+
   return (
-    <section className="px-6 pb-24 pt-6">
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-8 text-center">
+    <section ref={ref} className="relative px-6 pb-28 pt-16 overflow-hidden">
+      {/* Subtle bg glow */}
+      <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+        <div className="w-[500px] h-[500px] bg-blue-500 opacity-[0.02] rounded-full blur-[90px]" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-2xl">
+        <motion.div
+          className="mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+        >
           <p className="ui-label mb-3">Vision</p>
           <h2 className="editorial-h2 text-platinum">
-            What success <em>looks like</em>
+            Why Orydle <em>exists</em>
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="surface-panel relative overflow-hidden p-6 md:p-8">
-          <SerratedDivider className="absolute left-0 right-0 top-0" />
+        <div className="space-y-6">
+          {statements.map((line, i) => (
+            <motion.p
+              key={line}
+              className="text-[clamp(1.1rem,2.5vw,1.45rem)] leading-[1.5] text-platinum/60"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{
+                duration: 0.5,
+                delay: 0.2 + i * 0.12,
+                ease: "easeOut",
+              }}
+            >
+              {line}
+            </motion.p>
+          ))}
 
-          <p className="mb-6 pt-5 text-[18px] text-platinum/70">We succeed when:</p>
-
-          <ul className="space-y-3">
-            {successMetrics.map((metric) => (
-              <li key={metric} className="surface-card flex items-start gap-3 p-5 text-platinum/82">
-                <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-electric" />
-                <span className="text-[16px]">{metric}</span>
-              </li>
-            ))}
-          </ul>
+          {/* Concluding statement — slightly larger */}
+          <motion.p
+            className="pt-4 text-[clamp(1.3rem,3vw,1.75rem)] leading-[1.35] font-[var(--font-display)] text-platinum/80 tracking-[0.01em]"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{
+              duration: 0.6,
+              delay: 0.2 + statements.length * 0.12,
+              ease: "easeOut",
+            }}
+          >
+            {conclusion}
+          </motion.p>
         </div>
       </div>
     </section>

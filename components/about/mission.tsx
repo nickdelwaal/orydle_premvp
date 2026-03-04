@@ -1,63 +1,95 @@
-import { SerratedDivider } from "@/components/ui/serrated-divider";
+"use client";
 
-const driftCauses = [
-  "Slow onboarding (weeks to understand codebases)",
-  "Risky changes (unknown blast radius)",
-  "AI confusion (tools optimize locally, break globally)",
-  "Team misalignment (everyone has different mental models)",
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+
+const milestones = [
+  {
+    phase: "Phase 01",
+    title: "Problem discovered",
+    description:
+      "Architecture lived in docs and diagrams that drifted within weeks. Code was first-class — architecture was fiction.",
+  },
+  {
+    phase: "Phase 02",
+    title: "Architecture prototype built",
+    description:
+      "We built a formal system model that represents architecture as queryable, validated data — not documentation.",
+  },
+  {
+    phase: "Phase 03",
+    title: "Orydle platform created",
+    description:
+      "Krum was born: a visual builder backed by a system graph that generates real code and enforces alignment continuously.",
+  },
 ];
 
 export function Mission() {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+
   return (
-    <section className="px-6 py-20">
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-8">
+    <section ref={ref} className="px-6 py-20">
+      <div className="mx-auto max-w-3xl">
+        {/* Header */}
+        <motion.div
+          className="mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+        >
           <p className="ui-label mb-3">Our Thesis</p>
           <h2 className="editorial-h2 max-w-3xl text-platinum">
-            The architectural drift <em>problem</em>
+            How the <em>idea</em> evolved
           </h2>
-        </div>
+        </motion.div>
 
-        <article className="surface-panel relative overflow-hidden p-8 md:p-10">
-          <SerratedDivider className="absolute left-0 right-0 top-0" />
-
-          <div className="space-y-6 pt-4">
-            <p className="text-[18px] leading-relaxed text-platinum/72">
-              Modern development has a structural flaw:
-            </p>
-
-            <div className="grid gap-6 md:grid-cols-2">
-              <div className="surface-card p-6">
-                <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.16em] text-blue-electric">First-class</p>
-                <p className="text-[16px] text-platinum/82">
-                  <strong className="text-platinum">Code</strong> is first-class. You can compile it, run it, test it, deploy it.
-                </p>
-              </div>
-              <div className="surface-card p-6">
-                <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.16em] text-platinum/55">Second-class</p>
-                <p className="text-[16px] text-platinum/70">
-                  <strong className="text-platinum/85">Architecture</strong> is second-class. It lives in docs, diagrams, and tribal knowledge. It drifts. It goes stale. It becomes fiction.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <p className="mb-4 text-[16px] text-platinum/70">This causes:</p>
-              <ul className="space-y-3">
-                {driftCauses.map((cause) => (
-                  <li key={cause} className="surface-card flex items-start gap-3 p-4 text-[16px] text-platinum/82">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-electric" />
-                    <span>{cause}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="rounded-2xl border border-blue-electric/30 bg-blue-electric/10 p-5 text-center text-[16px] text-platinum/84">
-              Our solution: Make architecture first-class data.
-            </div>
+        {/* Vertical Timeline */}
+        <div className="relative pl-8 md:pl-10">
+          {/* Animated vertical line */}
+          <div className="absolute left-[11px] top-2 bottom-2 w-px overflow-hidden">
+            <motion.div
+              className="w-full bg-gradient-to-b from-white/[0.1] via-white/[0.06] to-transparent"
+              initial={{ height: "0%" }}
+              animate={isInView ? { height: "100%" } : {}}
+              transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
+            />
           </div>
-        </article>
+
+          <div className="space-y-10">
+            {milestones.map((m, i) => (
+              <motion.div
+                key={m.title}
+                className="relative"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.3 + i * 0.12,
+                  ease: "easeOut",
+                }}
+              >
+                {/* Circular marker */}
+                <div className="absolute -left-8 md:-left-10 top-1 flex h-[22px] w-[22px] items-center justify-center">
+                  <div className="h-[9px] w-[9px] rounded-full border border-white/15 bg-[#0f0d0c] shadow-[0_0_6px_rgba(255,255,255,0.04)]" />
+                </div>
+
+                {/* Content */}
+                <div className="rounded-xl border border-white/[0.06] bg-[#0a0908]/40 p-5 backdrop-blur-sm">
+                  <span className="mb-2 inline-block font-mono text-[10px] uppercase tracking-[0.16em] text-platinum/35">
+                    {m.phase}
+                  </span>
+                  <h3 className="editorial-h3 mb-2 text-[1.15rem] text-platinum/85 tracking-wide">
+                    {m.title}
+                  </h3>
+                  <p className="text-[14.5px] leading-relaxed text-platinum/50 font-normal">
+                    {m.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
