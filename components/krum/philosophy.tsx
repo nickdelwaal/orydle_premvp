@@ -9,22 +9,22 @@ export function Philosophy() {
 
   const slideUp: Variants = {
     hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } }
   };
 
   const slideRight: Variants = {
     hidden: { opacity: 0, x: -40 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut", delay: 0.12 } }
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" as const, delay: 0.12 } }
   };
 
   const slideLeft: Variants = {
     hidden: { opacity: 0, x: 40 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut", delay: 0.24 } }
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" as const, delay: 0.24 } }
   };
 
   const fadeIn: Variants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.6, ease: "easeOut", delay: 0.36 } }
+    visible: { opacity: 1, transition: { duration: 0.6, ease: "easeOut" as const, delay: 0.36 } }
   };
 
   return (

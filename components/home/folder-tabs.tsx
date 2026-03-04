@@ -35,10 +35,10 @@ const slideInItem = {
     x: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: "easeOut" as const,
     },
   },
-};
+} as const;
 
 const mismatchPoints = [
   "Code diverges from architecture",
