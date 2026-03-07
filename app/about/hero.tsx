@@ -114,7 +114,7 @@ export function AboutHero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          About Orydle
+          ABOUT ORYDLE
         </motion.p>
 
         <motion.h1
@@ -123,9 +123,9 @@ export function AboutHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15 }}
         >
-          We believe software should follow the&nbsp;system.
+          We got tired of systems
           <br />
-          <em>Not the other way around.</em>
+          <em>no one could understand.</em>
         </motion.h1>
 
         <motion.p
@@ -134,9 +134,7 @@ export function AboutHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          Orydle exists because growing systems lose clarity by default.
-          We&apos;re building Krum to make structural truth inevitable, not
-          aspirational.
+          Orydle exists because growing codebases lose structural clarity by default. We&apos;re building Krum to make alignment inevitable — not aspirational.
         </motion.p>
       </div>
     </section>

@@ -7,48 +7,23 @@ import { motion, useInView, Variants } from "framer-motion";
 const components = [
   {
     title: "Visual Builder",
-    items: [
-      "Services with boundaries",
-      "Data flows with contracts",
-      "Agent behaviors with constraints",
-      "Resources with ownership",
-    ],
-    intro: "Design systems using structured visual elements:",
-    outro: "Not drawings. Structured system objects that become real architecture.",
+    intro: "Design services, boundaries, data flows, and agent behaviors as structured visual objects — not drawings.",
+    outro: "Structured system objects that become real architecture.",
   },
   {
     title: "System Model",
-    items: [
-      "Stores your system as queryable data",
-      "Understands dependencies and constraints",
-      "Acts as single source of truth",
-      "Validates changes against architectural rules",
-    ],
-    intro: "The heart of Krum. A formal graph that:",
-    outro: "Every feature reads from or writes to this model.",
+    intro: "A formal graph storing your architecture as queryable data. Single source of truth. Every feature reads from it or writes to it.",
+    outro: "Validates all changes against your architectural rules.",
   },
   {
     title: "Code Generation",
-    items: [
-      "Project structure matching your design",
-      "Service boundaries and interfaces",
-      "Boilerplate and connective logic",
-      "Implementation scaffolding",
-    ],
-    intro: "From the system model, we produce:",
-    outro:
-      "The code is real, editable, and yours. We don\u2019t hide complexity\u2014we organize it.",
+    intro: "Project structure, service interfaces, and connective logic generated directly from your model.",
+    outro: "Real, editable code. We organize complexity — we don&apos;t hide it.",
   },
   {
     title: "AI Assistance",
-    items: [
-      "Expand intent into structure",
-      "Suggest refinements",
-      "Generate implementation details",
-    ],
-    intro: "AI helps you:",
-    outro:
-      "But AI is not the source of truth. The system model is. AI suggestions are constrained by architectural rules.",
+    intro: "AI expands intent into structure and suggests refinements — but only within your architectural constraints.",
+    outro: "AI is not the source of truth. The system model is.",
   },
 ];
 
@@ -75,7 +50,7 @@ export function EngineeringPhilosophy() {
   };
 
   return (
-    <section className="px-6 pb-24 pt-12 relative" ref={ref}>
+    <section className="px-6 py-16 relative" ref={ref}>
       <div className="mx-auto max-w-6xl relative z-10">
         {/* Heading */}
         <motion.div
@@ -84,9 +59,9 @@ export function EngineeringPhilosophy() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          <p className="ui-label mb-3">Core Components</p>
+          <p className="ui-label mb-3">WHAT&apos;S INSIDE KRUM</p>
           <h2 className="editorial-h2 text-platinum">
-            Four layers of <em>system-first development</em>
+            Four components. <em>One coherent system.</em>
           </h2>
         </motion.div>
 
@@ -109,7 +84,7 @@ export function EngineeringPhilosophy() {
             {components.map((comp, index) => (
               <article
                 key={comp.title}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0a0908]/40 p-6 shadow-sm backdrop-blur-sm transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:border-white/[0.15] hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)]"
+                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0a0908]/40 p-6 shadow-sm backdrop-blur-sm transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:border-blue-electric/20 hover:shadow-[0_8px_30px_rgba(37,91,252,0.08)]"
               >
                 <div>
                   <div className="mb-5 flex items-center gap-4">
@@ -124,20 +99,9 @@ export function EngineeringPhilosophy() {
                       {comp.title}
                     </h3>
                   </div>
-                  <p className="mb-4 text-[15px] text-platinum/60 leading-relaxed font-normal">
+                  <p className="mb-8 text-[15px] text-platinum/60 leading-relaxed font-normal">
                     {comp.intro}
                   </p>
-                  <ul className="mb-6 space-y-2.5">
-                    {comp.items.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-3 text-[14.5px] text-platinum/75"
-                      >
-                        <span className="mt-[7px] h-[4px] w-[4px] shrink-0 rounded-full bg-platinum/30" />
-                        <span className="leading-snug">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
                 <p className="mt-auto border-t border-white/5 pt-4 text-[13.5px] font-normal leading-relaxed text-platinum/40 group-hover:text-platinum/50 transition-colors duration-[250ms]">
                   {comp.outro}

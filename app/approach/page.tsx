@@ -1,33 +1,27 @@
 import type { Metadata } from "next";
 import { ApproachHero } from "./hero";
-import { AlignmentProblem } from "@/components/approach/expandable-principles";
-import { SystemFirst } from "@/components/approach/system-first";
 import { Manifesto } from "@/components/approach/manifesto";
+import { SystemFirst } from "@/components/approach/system-first";
 import { ThreeLayers } from "@/components/approach/three-layers";
+import { HowChangesPropagate } from "@/components/approach/how-changes-propagate";
 import { EnforcementModel } from "@/components/approach/comparison-matrix";
-import { WorkflowPractice } from "@/components/approach/workflow-practice";
-import { WorkflowExample } from "@/components/approach/workflow-example";
-import { WhoThisServes } from "@/components/approach/who-this-serves";
 import { ApproachFinalCta } from "@/components/approach/final-cta";
 
 export const metadata: Metadata = {
   title: "Approach - Orydle AI",
   description:
-    "How Krum maintains alignment across intent, structure, and execution layers.",
+    "How Krum enforces alignment across intent, structure, and execution. The intellectual proof behind system-first development.",
 };
 
 export default function ApproachPage() {
   return (
     <>
       <ApproachHero />
-      <AlignmentProblem />
-      <SystemFirst />
       <Manifesto />
+      <SystemFirst />
       <ThreeLayers />
+      <HowChangesPropagate />
       <EnforcementModel />
-      <WorkflowPractice />
-      <WorkflowExample />
-      <WhoThisServes />
       <ApproachFinalCta />
     </>
   );

@@ -52,12 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark" suppressHydrationWarning>
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              "(function(){try{var t=localStorage.getItem('orydle-theme');document.documentElement.setAttribute('data-theme',(t==='light'||t==='dark')?t:'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();",
-          }}
-        />
+
         <link rel="icon" type="image/svg+xml" sizes="any" href="/transparent_bg_brandmark.svg?v=1" />
         <link rel="icon" type="image/svg+xml" sizes="any" href="/transparent_bg_brandmark.svg?v=1" />
       </head>

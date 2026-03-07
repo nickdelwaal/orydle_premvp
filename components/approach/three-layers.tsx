@@ -7,46 +7,26 @@ const layers = [
     {
         id: "01",
         name: "Intent Layer",
-        description: "What the system is supposed to do",
-        items: [
-            "Business requirements",
-            "Constraints and invariants",
-            "Non-functional requirements",
-            "Architectural decisions",
-        ],
+        description: "What the system must do",
+        items: ["Business requirements", "Constraints & invariants", "Architectural decisions"],
     },
     {
         id: "02",
         name: "Structure Layer",
         description: "How the system is composed",
-        items: [
-            "Services and boundaries",
-            "Data flows and contracts",
-            "Component relationships",
-            "Dependency rules",
-        ],
+        items: ["Services & boundaries", "Data flows & contracts", "Dependency rules"],
     },
     {
         id: "03",
-        name: "Code Generation",
+        name: "Execution Layer",
         description: "The actual running code",
-        items: [
-            "Implementation files",
-            "Service logic",
-            "Infrastructure code",
-            "Tests and validations",
-        ],
+        items: ["Implementation files", "Service logic", "Infrastructure & tests"],
     },
     {
         id: "04",
         name: "Evolution Layer",
-        description: "How the system adapts over time",
-        items: [
-            "Change validation",
-            "Drift detection",
-            "Model synchronization",
-            "Continuous enforcement",
-        ],
+        description: "How the system adapts",
+        items: ["Change validation", "Drift detection", "Continuous enforcement"],
     },
 ];
 
@@ -56,11 +36,11 @@ function PipelineConnector({ delay }: { delay: number }) {
 
     return (
         <div ref={ref} className="flex justify-center py-1">
-            <svg width="2" height="40" viewBox="0 0 2 40" className="overflow-visible">
+            <svg width="6" height="40" viewBox="0 0 6 40" className="overflow-visible">
                 <motion.line
-                    x1="1"
+                    x1="3"
                     y1="0"
-                    x2="1"
+                    x2="3"
                     y2="40"
                     stroke="rgba(255,255,255,0.08)"
                     strokeWidth="1.5"
@@ -69,6 +49,16 @@ function PipelineConnector({ delay }: { delay: number }) {
                     animate={isInView ? { strokeDashoffset: 0 } : {}}
                     transition={{ duration: 0.6, delay, ease: "easeOut" }}
                 />
+                {isInView && (
+                    <circle r="2.5" fill="rgba(37,91,252,0.6)">
+                        <animateMotion
+                            dur="2s"
+                            begin={`${delay + 1}s`}
+                            repeatCount="indefinite"
+                            path="M3,0 L3,40"
+                        />
+                    </circle>
+                )}
             </svg>
         </div>
     );
@@ -88,14 +78,14 @@ function LayerPanel({
     return (
         <motion.article
             ref={ref}
-            className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0a0908]/40 p-6 md:p-8 backdrop-blur-sm shadow-sm transition-all duration-[250ms] ease-out hover:border-white/[0.15] hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)]"
+            className="group relative overflow-hidden rounded-2xl border border-white/[0.08] border-l-2 border-l-transparent bg-[#0a0908]/40 p-6 md:p-8 backdrop-blur-sm shadow-sm transition-all duration-[250ms] ease-out hover:border-white/[0.15] hover:border-l-blue-electric/40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)]"
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay, ease: "easeOut" }}
         >
             <div className="flex items-start gap-5">
                 {/* Number badge */}
-                <div className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-b from-[#1a1816] to-[#0f0d0c] border border-white/5 shadow-inner">
+                <div className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-b from-[#1a1816] to-[#0f0d0c] border border-white/5 shadow-inner transition-colors duration-300 group-hover:border-blue-electric/20 group-hover:bg-blue-electric/5">
                     <div className="absolute inset-0 rounded-full bg-blue-100 opacity-5 blur-md" />
                     <span className="relative z-10 font-mono text-[11px] text-platinum/70">
                         {layer.id}
@@ -107,7 +97,7 @@ function LayerPanel({
                         <h3 className="editorial-h3 text-[1.25rem] text-platinum/90 tracking-wide">
                             {layer.name}
                         </h3>
-                        <span className="text-[13px] text-platinum/35 font-mono hidden sm:inline">
+                        <span className="text-[13px] text-platinum/45 font-mono hidden sm:inline">
                             — {layer.description}
                         </span>
                     </div>
@@ -148,10 +138,14 @@ export function ThreeLayers() {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5 }}
                 >
-                    <p className="ui-label mb-3">Architecture Model</p>
-                    <h2 className="editorial-h2 max-w-3xl text-platinum">
-                        The four layers of system <em>alignment</em>
+                    <p className="ui-label mb-3">THE ALIGNMENT MODEL</p>
+                    <h2 className="editorial-h2 text-platinum">
+                        Three layers. Always <em>in sync.</em>
                     </h2>
+                    <p className="mt-4 max-w-xl text-[17px] leading-relaxed text-platinum/55">
+                        Every part of Krum reads from or writes to this model. Change one layer —
+                        the others update automatically, or the system rejects the change.
+                    </p>
                 </motion.div>
 
                 {/* Vertical Pipeline */}

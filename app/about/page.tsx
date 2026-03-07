@@ -1,30 +1,24 @@
 import type { Metadata } from "next";
 import { AboutHero } from "./hero";
+import { OriginStory } from "@/components/about/origin-story";
 import { Mission } from "@/components/about/mission";
-import { WhatWereBuilding } from "@/components/about/what-were-building";
-import { Founders } from "@/components/about/founders";
-import { WhoWeAre } from "@/components/about/who-we-are";
 import { ProductCredibility } from "@/components/about/product-credibility";
-import { Stage } from "@/components/about/stage";
 import { AboutManifesto } from "@/components/about/about-manifesto";
 import { AboutFinalCta } from "@/components/about/about-final-cta";
 
 export const metadata: Metadata = {
   title: "About - Orydle AI",
   description:
-    "We believe architecture should enforce itself. Orydle is building Krum to make structural truth inevitable.",
+    "We got tired of systems no one could understand. Orydle is building Krum to make structural truth inevitable.",
 };
 
 export default function AboutPage() {
   return (
     <>
       <AboutHero />
+      <OriginStory />
       <Mission />
-      <WhatWereBuilding />
-      <Founders />
       <ProductCredibility />
-      <WhoWeAre />
-      <Stage />
       <AboutManifesto />
       <AboutFinalCta />
     </>

@@ -56,30 +56,6 @@ const layerColors = {
   },
 };
 
-const scenarios = [
-  {
-    trigger: "When you change the Intent Layer:",
-    outcomes: [
-      "Structure updates to match",
-      "Execution scaffolding regenerates",
-    ],
-    fallback: "System flags conflicts and requires resolution",
-  },
-  {
-    trigger: "When you change the Structure Layer:",
-    outcomes: ["Intent validation runs", "Execution code updates"],
-    fallback: "Dependency violations surface immediately",
-  },
-  {
-    trigger: "When you change the Execution Layer:",
-    outcomes: [
-      "Structure consistency check runs",
-      "Intent alignment verified",
-    ],
-    fallback: "Change is rejected with explanation",
-  },
-];
-
 /* ── Helpers ─────────────────────────────────────────────── */
 function getNodeById(id: string) {
   return nodes.find((n) => n.id === id);
@@ -139,7 +115,7 @@ export function EnforcementModel() {
 
   return (
     <section ref={ref} className="px-6 py-20">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-4xl text-center">
         {/* Header */}
         <motion.div
           className="mb-10 text-center"
@@ -147,83 +123,44 @@ export function EnforcementModel() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <p className="ui-label mb-3">System Map Explorer</p>
+          <p className="ui-label mb-3">LIVE SYSTEM MAP</p>
           <h2 className="editorial-h2 text-platinum">
-            Changes propagate or get <em>rejected</em>
+            The architecture graph, <em>interactive</em>
           </h2>
+          <p className="mt-3 text-[15px] max-w-xl mx-auto text-platinum/45 text-center">
+            Toggle layers to highlight dependencies. Hover nodes to trace connections.
+          </p>
         </motion.div>
 
         <motion.div
-          className="grid gap-8 md:grid-cols-[5fr_6fr] md:items-start"
+          className="mx-auto max-w-2xl"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          {/* Left column: Explanation */}
-          <div className="space-y-6">
-            {/* Layer toggles */}
-            <div>
-              <p className="text-[13px] font-mono text-platinum/40 mb-3 uppercase tracking-widest">
-                Toggle Layers
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {layers.map((l) => (
-                  <button
-                    key={l.key}
-                    onClick={() =>
-                      setActiveLayer(activeLayer === l.key ? null : l.key)
-                    }
-                    className={`rounded-full border px-4 py-1.5 text-[13px] font-mono transition-all duration-200 ${activeLayer === l.key
-                        ? "border-white/20 bg-white/10 text-platinum/90"
-                        : "border-white/[0.06] bg-white/[0.02] text-platinum/45 hover:border-white/10 hover:text-platinum/60"
-                      }`}
-                  >
-                    {l.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Scenario cards */}
-            <div className="space-y-4">
-              {scenarios.map((scenario) => (
-                <div
-                  key={scenario.trigger}
-                  className="rounded-xl border border-white/[0.06] bg-[#0a0908]/40 p-5 backdrop-blur-sm"
-                >
-                  <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.16em] text-platinum/50">
-                    {scenario.trigger}
-                  </p>
-                  <div className="space-y-1.5">
-                    {scenario.outcomes.map((outcome) => (
-                      <p
-                        key={outcome}
-                        className="flex items-start gap-2 text-[14px] text-platinum/65"
-                      >
-                        <span className="shrink-0 text-platinum/35">→</span>
-                        {outcome}
-                      </p>
-                    ))}
-                    <p className="flex items-start gap-2 text-[14px] text-platinum/45">
-                      <span className="shrink-0 text-platinum/30">→</span>
-                      <span>OR: {scenario.fallback}</span>
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="rounded-xl border border-blue-400/15 bg-blue-400/[0.04] p-4 text-center text-[14px] text-platinum/55">
-              This isn&apos;t CI/CD. This is architectural governance as a
-              first-class system.
-            </div>
+          {/* Layer toggles */}
+          <div className="mb-6 flex justify-center flex-wrap gap-2">
+            {layers.map((l) => (
+              <button
+                key={l.key}
+                onClick={() =>
+                  setActiveLayer(activeLayer === l.key ? null : l.key)
+                }
+                className={`rounded-full border px-4 py-1.5 text-[13px] font-mono transition-all duration-200 ${activeLayer === l.key
+                  ? "border-white/20 bg-white/10 text-platinum/90"
+                  : "border-white/[0.06] bg-white/[0.02] text-platinum/45 hover:border-white/10 hover:text-platinum/60"
+                  }`}
+              >
+                {l.label}
+              </button>
+            ))}
           </div>
 
           {/* Right column: Interactive Architecture Map */}
           <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-[#0e0c0b]/80 to-[#0a0908]/80 p-4 backdrop-blur-sm">
             {/* Faint glow */}
             <div className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden rounded-2xl">
-              <div className="w-[400px] h-[400px] bg-blue-500 opacity-[0.02] rounded-full blur-[80px]" />
+              <div className="w-[400px] h-[400px] bg-blue-500 opacity-[0.04] rounded-full blur-[80px]" />
             </div>
 
             <svg

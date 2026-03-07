@@ -6,21 +6,21 @@ import { motion, useInView } from "framer-motion";
 const milestones = [
   {
     phase: "Phase 01",
-    title: "Problem discovered",
+    title: "The problem became undeniable",
     description:
-      "Architecture lived in docs and diagrams that drifted within weeks. Code was first-class — architecture was fiction.",
+      "Every production system we touched had the same failure mode: architecture lived in docs and diagrams that drifted from reality within weeks. Engineers were guessing. AI made it faster to guess wrong.",
   },
   {
     phase: "Phase 02",
-    title: "Architecture prototype built",
+    title: "Architecture as data — the prototype",
     description:
-      "We built a formal system model that represents architecture as queryable, validated data — not documentation.",
+      "We built a formal system model that stores architecture as a queryable, validated graph. Not documentation. A structural truth that every tool in the environment reads from and writes to.",
   },
   {
     phase: "Phase 03",
-    title: "Orydle platform created",
+    title: "Krum — the environment",
     description:
-      "Krum was born: a visual builder backed by a system graph that generates real code and enforces alignment continuously.",
+      "Visual builder. System model. Code generation. AI that respects the model. Four components, one coherent system. The architecture enforces itself.",
   },
 ];
 
@@ -38,9 +38,9 @@ export function Mission() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <p className="ui-label mb-3">Our Thesis</p>
+          <p className="ui-label mb-3">HOW WE GOT HERE</p>
           <h2 className="editorial-h2 max-w-3xl text-platinum">
-            How the <em>idea</em> evolved
+            The idea, <em>in three steps.</em>
           </h2>
         </motion.div>
 

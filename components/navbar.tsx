@@ -6,12 +6,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { NavbarVisualShell } from "@/components/ui/navbar-visual-shell";
+import RotationNavItem from "@/components/ui/RotationButton";
 
 const navLinks = [
   { href: "/krum", label: "Krum" },
   { href: "/approach", label: "Approach" },
   { href: "/about", label: "About" },
-  { href: "/security", label: "Security" },
 ];
 
 
@@ -47,21 +47,15 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={cn(
-                    "inline-flex h-11 items-center justify-center rounded-full px-8 text-[15px] font-medium leading-none transition-colors duration-300",
-                    isActive(link.href)
-                      ? "bg-[#e7e5e4] text-[#0c0a09]"
-                      : "text-[#e7e5e4]/78 hover:bg-[#e7e5e4] hover:text-[#0c0a09]"
-                  )}
+                  className="inline-flex outline-none rounded-full overflow-hidden"
                 >
-                  {link.label}
+                  <RotationNavItem label={link.label} isActive={isActive(link.href)} />
                 </Link>
               ))}
             </div>
           </nav>
 
           <div className="hidden items-center gap-2 md:flex">
-
             <Link
               href="/request-access"
               className={cn(
@@ -95,14 +89,9 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={cn(
-                  "flex min-h-11 items-center rounded-2xl px-4 text-[15px] font-medium transition-colors duration-300",
-                  isActive(link.href)
-                    ? "bg-[#e7e5e4] text-[#0c0a09]"
-                    : "text-[#e7e5e4]/80 hover:bg-[#e7e5e4] hover:text-[#0c0a09]"
-                )}
+                className="flex outline-none rounded-full overflow-hidden"
               >
-                {link.label}
+                <RotationNavItem label={link.label} isActive={isActive(link.href)} />
               </Link>
             ))}
           </nav>

@@ -41,7 +41,7 @@ export function ApproachHero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Our Approach
+            THE APPROACH
           </motion.p>
 
           <motion.h1
@@ -50,7 +50,7 @@ export function ApproachHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            How Krum maintains <em>alignment</em>
+            The proof behind <em>the alignment model</em>
           </motion.h1>
 
           <motion.p
@@ -59,7 +59,7 @@ export function ApproachHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Three layers that stay synchronized by design, not by discipline.
+            For engineers who want to understand why Krum works — not just that it does.
           </motion.p>
 
           <motion.div
@@ -69,10 +69,9 @@ export function ApproachHero() {
           >
             <Link
               href="/request-access"
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-[15px] font-medium text-platinum backdrop-blur-sm transition-all duration-300 hover:border-white/25 hover:bg-white/10"
+              className="cta-button"
             >
-              Request Access
-              <span className="text-platinum/40">→</span>
+              Request Early Access →
             </Link>
           </motion.div>
         </div>
@@ -210,7 +209,7 @@ export function ApproachHero() {
 
           {/* Bottom caption */}
           <div className="border-t border-white/5 mt-2 px-3 py-3 text-[13px] text-platinum/40 font-mono">
-            Intent → Structure → Execution. Always aligned.
+            System is truth. Architecture is data. Code follows structure.
           </div>
         </motion.div>
       </div>
