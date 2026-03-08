@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { ApproachHero } from "./hero";
 import { Manifesto } from "@/components/approach/manifesto";
 import { SystemFirst } from "@/components/approach/system-first";
-import { ThreeLayers } from "@/components/approach/three-layers";
 import { HowChangesPropagate } from "@/components/approach/how-changes-propagate";
+import { CoreNarrative } from "@/components/krum/core-narrative";
 import { EnforcementModel } from "@/components/approach/comparison-matrix";
 import { ApproachFinalCta } from "@/components/approach/final-cta";
 
@@ -19,8 +19,8 @@ export default function ApproachPage() {
       <ApproachHero />
       <Manifesto />
       <SystemFirst />
-      <ThreeLayers />
       <HowChangesPropagate />
+      <CoreNarrative />
       <EnforcementModel />
       <ApproachFinalCta />
     </>
