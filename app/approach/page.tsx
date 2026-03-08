@@ -5,7 +5,6 @@ import { SystemFirst } from "@/components/approach/system-first";
 import { HowChangesPropagate } from "@/components/approach/how-changes-propagate";
 import { CoreNarrative } from "@/components/krum/core-narrative";
 import { EnforcementModel } from "@/components/approach/comparison-matrix";
-import { ApproachFinalCta } from "@/components/approach/final-cta";
 
 export const metadata: Metadata = {
   title: "Approach - Orydle AI",
@@ -22,7 +21,6 @@ export default function ApproachPage() {
       <HowChangesPropagate />
       <CoreNarrative />
       <EnforcementModel />
-      <ApproachFinalCta />
     </>
   );
 }
