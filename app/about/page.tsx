@@ -4,7 +4,6 @@ import { OriginStory } from "@/components/about/origin-story";
 import { Mission } from "@/components/about/mission";
 import { ProductCredibility } from "@/components/about/product-credibility";
 import { AboutManifesto } from "@/components/about/about-manifesto";
-import { AboutFinalCta } from "@/components/about/about-final-cta";
 
 export const metadata: Metadata = {
   title: "About - Orydle AI",
@@ -20,7 +19,6 @@ export default function AboutPage() {
       <Mission />
       <ProductCredibility />
       <AboutManifesto />
-      <AboutFinalCta />
     </>
   );
 }
