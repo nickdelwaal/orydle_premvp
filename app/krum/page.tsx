@@ -3,15 +3,14 @@ import { KrumHero } from "./hero";
 import { TheProblem } from "@/components/krum/the-problem";
 import { Philosophy } from "@/components/krum/philosophy";
 import { EngineeringPhilosophy } from "@/components/krum/engineering-philosophy";
-import { Manifesto } from "@/components/krum/manifesto";
+import { CoreNarrative } from "@/components/krum/core-narrative";
 import { WhatItIs } from "@/components/krum/what-it-is";
-import { WhoItsFor } from "@/components/krum/who-its-for";
 import { DevelopmentNotice } from "@/components/krum/development-notice";
 
 export const metadata: Metadata = {
   title: "Krum - Orydle AI",
   description:
-    "Krum is a system-first development environment. Design architecture visually, generate real code, enforce alignment automatically.",
+    "Krum is an AI workspace for mapping software systems, planning impact-aware changes, and executing with production confidence.",
 };
 
 export default function KrumPage() {
@@ -21,9 +20,8 @@ export default function KrumPage() {
       <TheProblem />
       <Philosophy />
       <EngineeringPhilosophy />
-      <Manifesto />
+      <CoreNarrative />
       <WhatItIs />
-      <WhoItsFor />
       <DevelopmentNotice />
     </>
   );

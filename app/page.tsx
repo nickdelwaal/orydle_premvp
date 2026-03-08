@@ -1,24 +1,28 @@
-import dynamic from "next/dynamic";
-import { EditorialHero } from "@/components/home/editorial-hero";
+import type { Metadata } from "next";
+import { KrumHero } from "./krum/hero";
+import { TheProblem } from "@/components/krum/the-problem";
+import { Philosophy } from "@/components/krum/philosophy";
+import { EngineeringPhilosophy } from "@/components/krum/engineering-philosophy";
+import { CoreNarrative } from "@/components/krum/core-narrative";
+import { WhatItIs } from "@/components/krum/what-it-is";
+import { DevelopmentNotice } from "@/components/krum/development-notice";
 
-// Lazy-load below-fold sections — code-split to reduce initial JS bundle
-const FolderTabs = dynamic(
-  () => import("@/components/home/folder-tabs").then((m) => ({ default: m.FolderTabs }))
-);
+export const metadata: Metadata = {
+  title: "Krum - Orydle AI",
+  description:
+    "Krum is an AI workspace for mapping software systems, planning impact-aware changes, and executing with production confidence.",
+};
 
-const ShowcaseCatalogSection = dynamic(
-  () => import("@/components/home/showcase-catalog-section")
-);
-
-export default function Home() {
+export default function KrumPage() {
   return (
     <>
-      {/* Above-fold: render immediately */}
-      <EditorialHero />
-      {/* Below-fold: lazy loaded JS chunks */}
-      <FolderTabs />
-      <ShowcaseCatalogSection />
+      <KrumHero />
+      <TheProblem />
+      <Philosophy />
+      <EngineeringPhilosophy />
+      <CoreNarrative />
+      <WhatItIs />
+      <DevelopmentNotice />
     </>
   );
 }
-

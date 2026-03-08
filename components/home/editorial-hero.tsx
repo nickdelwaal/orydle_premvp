@@ -20,8 +20,8 @@ export function EditorialHero() {
             <Link href="/request-access" className="cta-button">
               Request Early Access
             </Link>
-            <Link href="#system-tabs" className="btn-pill-ghost px-7 py-3 text-[15px]">
-              Explore Workflow
+            <Link href="/krum" className="btn-pill-ghost px-7 py-3 text-[15px]">
+              Explore Krum
             </Link>
           </div>
         </div>

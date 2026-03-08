@@ -12,16 +12,16 @@ export function Footer() {
   return (
     <footer className="pt-20" ref={sectionRef}>
       <div className="footer-cta-shell">
-        <div className="footer-cta-main relative z-10 mx-auto flex min-h-[55vh] max-w-4xl flex-col items-center justify-center py-16 text-center">
+        <div className="footer-cta-main relative z-10 mx-auto flex min-h-[55vh] max-w-4xl flex-col items-center justify-center pt-16 pb-56 text-center">
 
           {/* Centered Copy & Actions */}
           <motion.div
-            className="flex w-full flex-col items-center justify-center relative z-10"
+            className="flex w-full flex-col items-center justify-center relative z-10 mb-40 lg:mb-48"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <p className="footer-cta-label block">ORYDLE / SYSTEM INTELLIGENCE</p>
+
             <h2 className="footer-cta-heading mx-auto mt-6 max-w-[18ch] leading-[1.05]">
               Architecture that enforces itself
             </h2>
