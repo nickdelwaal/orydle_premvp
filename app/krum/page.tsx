@@ -3,8 +3,6 @@ import { KrumHero } from "./hero";
 import { TheProblem } from "@/components/krum/the-problem";
 import { Philosophy } from "@/components/krum/philosophy";
 import { EngineeringPhilosophy } from "@/components/krum/engineering-philosophy";
-import { CoreNarrative } from "@/components/krum/core-narrative";
-import { WhatItIs } from "@/components/krum/what-it-is";
 import { DevelopmentNotice } from "@/components/krum/development-notice";
 
 export const metadata: Metadata = {
@@ -20,8 +18,6 @@ export default function KrumPage() {
       <TheProblem />
       <Philosophy />
       <EngineeringPhilosophy />
-      <CoreNarrative />
-      <WhatItIs />
       <DevelopmentNotice />
     </>
   );
