@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -28,15 +27,6 @@ export function Footer() {
             <p className="footer-cta-supporting mx-auto mt-8 max-w-2xl text-[1.15rem]">
               Stop documenting systems. Start defining them. Design visually with Krum, generate structure, ship changes that preserve alignment across intent, architecture, and code.
             </p>
-
-            <div className="footer-cta-buttons mt-10 justify-center flex w-full gap-4">
-              <Link href="/request-access" className="cta-button">
-                Request Access
-              </Link>
-              <Link href="/approach" className="btn-pill-ghost footer-light min-h-11 px-7 py-3 text-[15px]">
-                Read the Approach
-              </Link>
-            </div>
           </motion.div>
 
 
