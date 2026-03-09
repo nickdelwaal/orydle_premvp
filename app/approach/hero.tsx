@@ -50,7 +50,7 @@ export function ApproachHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            The proof behind <em>the alignment model</em>
+            Most tools make AI faster. Krum makes it <em>correct</em>.
           </motion.h1>
 
           <motion.p
@@ -59,7 +59,7 @@ export function ApproachHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            For engineers who want to understand why Krum works — not just that it does.
+            Speed without structural integrity is how you get a codebase no one can safely change. Krum enforces the model your system was designed against — not the one that emerged by accident.
           </motion.p>
 
           <motion.div
