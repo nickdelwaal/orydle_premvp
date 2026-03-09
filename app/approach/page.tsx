@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { ApproachHero } from "./hero";
-import { Manifesto } from "@/components/approach/manifesto";
 import { SystemFirst } from "@/components/approach/system-first";
 import { HowChangesPropagate } from "@/components/approach/how-changes-propagate";
 import { CoreNarrative } from "@/components/krum/core-narrative";
@@ -16,7 +15,6 @@ export default function ApproachPage() {
   return (
     <>
       <ApproachHero />
-      <Manifesto />
       <SystemFirst />
       <HowChangesPropagate />
       <CoreNarrative />
