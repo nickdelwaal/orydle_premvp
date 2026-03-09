@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { ApproachHero } from "./hero";
 import { SystemFirst } from "@/components/approach/system-first";
-import { HowChangesPropagate } from "@/components/approach/how-changes-propagate";
 import { CoreNarrative } from "@/components/krum/core-narrative";
 import { EnforcementModel } from "@/components/approach/comparison-matrix";
 
@@ -16,7 +15,6 @@ export default function ApproachPage() {
     <>
       <ApproachHero />
       <SystemFirst />
-      <HowChangesPropagate />
       <CoreNarrative />
       <EnforcementModel />
     </>
