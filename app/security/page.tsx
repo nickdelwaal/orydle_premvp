@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { SecurityHero } from "./hero";
 import { Principles } from "@/components/security/principles";
-import { ArchitectureSecurity } from "@/components/security/architecture-security";
 import { AccessControl } from "@/components/security/access-control";
 import { AiPrivacy } from "@/components/security/ai-privacy";
 import { Infrastructure } from "@/components/security/infrastructure";
@@ -21,7 +20,6 @@ export default function SecurityPage() {
     <>
       <SecurityHero />
       <Principles />
-      <ArchitectureSecurity />
       <AccessControl />
       <AiPrivacy />
       <Infrastructure />
